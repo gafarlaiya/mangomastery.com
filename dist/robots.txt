@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mangomastery.com/sitemap.xml
