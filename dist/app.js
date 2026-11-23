@@ -243,12 +243,12 @@ var TESTI=[
 var VIDHOST='https://www.gujaratbio.com/assets/media/mango/';
 var RES={
   h:['🔬 સંશોધન શું કહે છે','🔬 शोध क्या कहता है','🔬 What the research says'],
-  i:['Immunity Mango Kit માં ત્રણેય છે: હ્યુમિક એસિડ, સીવીડ (દરિયાઈ શેવાળ) અર્ક અને એમિનો એસિડ. આંબા પર આ ત્રણ ઘટકો પર થયેલા સંશોધનો:','Immunity Mango Kit में तीनों हैं: ह्यूमिक एसिड, सीवीड (समुद्री शैवाल) अर्क और अमीनो एसिड. आम पर इन तीनों तत्वों पर हुए शोध:','The Immunity Mango Kit contains all three: humic acid, seaweed extract and amino acids. Here is what research on these three ingredients has found in mango:'],
+  i:['Immunity Mango Special, Immunity Gold અને Immunity Granules ના મુખ્ય ઘટકો પર જુદી જુદી યુનિવર્સિટીઓમાં આંબા પર ટ્રાયલ થયા છે, અને તેમાં ફાયદા જોવા મળ્યા છે:','Immunity Mango Special, Immunity Gold और Immunity Granules के मुख्य तत्वों पर अलग-अलग विश्वविद्यालयों में आम पर ट्रायल हुए हैं, और उनमें फ़ायदे मिले हैं:','The key ingredients inside Immunity Mango Special, Immunity Gold and Immunity Granules have been trialled on mango at different universities, and the trials found benefits:'],
   c:[
-   ['સીવીડ અર્ક અને હ્યુમિક એસિડ: આમ્રપાલી આંબાના બે વર્ષના ટ્રાયલમાં સીવીડ અર્કના છંટકાવથી ફળનું સૌથી વધુ વજન, સૌથી વધુ ફળ અને ઝાડદીઠ સૌથી વધુ ઉત્પાદન મળ્યું. હ્યુમિક એસિડથી વિટામિન C સૌથી વધુ મળ્યું.','सीवीड अर्क और ह्यूमिक एसिड: आम्रपाली आम के दो साल के ट्रायल में सीवीड अर्क के छिड़काव से फल का सबसे ज़्यादा वज़न, सबसे ज़्यादा फल और प्रति पेड़ सबसे ज़्यादा उपज मिली. ह्यूमिक एसिड से विटामिन C सबसे ज़्यादा मिला.','Seaweed extract and humic acid: in a two-year trial on Amrapali mango, a seaweed extract spray gave the highest fruit weight, the most fruits and the highest yield per tree. Humic acid gave the highest vitamin C.'],
-   ['હ્યુમિક એસિડ, કેસર: જૂનાગઢ કૃષિ યુનિવર્સિટીના ટ્રાયલમાં હ્યુમિક એસિડના છંટકાવથી ફળ બેસવું અને ફળ ટકવું સૌથી સારું રહ્યું અને ફળ ખરવું ઓછું થયું.','ह्यूमिक एसिड, केसर: जूनागढ़ कृषि विश्वविद्यालय के ट्रायल में ह्यूमिक एसिड के छिड़काव से फल लगना और फल टिकना सबसे अच्छा रहा और फल झड़ना कम हुआ.','Humic acid on Kesar: in a Junagadh Agricultural University trial, humic acid sprays gave the best fruit set and fruit retention and the lowest fruit drop.'],
-   ['એમિનો એસિડ, હાફૂસ: ઇજિપ્તના બે વર્ષના ટ્રાયલમાં એમિનો એસિડના છંટકાવથી ઝાડદીઠ ઉત્પાદન બિન-છંટકાવવાળા ઝાડ કરતાં આશરે 11 થી 15% વધ્યું.','अमीनो एसिड, हापुस: मिस्र के दो साल के ट्रायल में अमीनो एसिड के छिड़काव से प्रति पेड़ उपज बिना छिड़काव वाले पेड़ों से लगभग 11 से 15% बढ़ी.','Amino acids on Alphonse: in a two-season trial in Egypt, amino acid sprays raised yield per tree by about 11 to 15% over untreated trees.'],
-   ['એમિનો એસિડ, ફળ ટકવું: પાકિસ્તાનના ટ્રાયલમાં એમિનો એસિડના છંટકાવવાળા ઝાડ પર પાકતા સુધી વધુ ફળ ટક્યાં.','अमीनो एसिड, फल टिकना: पाकिस्तान के ट्रायल में अमीनो एसिड के छिड़काव वाले पेड़ों पर पकने तक ज़्यादा फल टिके.','Amino acids and fruit retention: in a trial in Pakistan, trees sprayed with amino acids held more fruit through to maturity.']
+   ['આમ્રપાલી આંબાના બે વર્ષના ટ્રાયલમાં ફળનું સૌથી વધુ વજન, સૌથી વધુ ફળ અને ઝાડદીઠ સૌથી વધુ ઉત્પાદન મળ્યું, સાથે ફળમાં વિટામિન C પણ વધુ.','आम्रपाली आम के दो साल के ट्रायल में फल का सबसे ज़्यादा वज़न, सबसे ज़्यादा फल और प्रति पेड़ सबसे ज़्यादा उपज मिली, साथ में फल में विटामिन C भी ज़्यादा.','In a two-year Amrapali trial, treated trees gave the heaviest fruit, the most fruit and the highest yield per tree, along with more vitamin C in the fruit.'],
+   ['જૂનાગઢ કૃષિ યુનિવર્સિટીના કેસર ટ્રાયલમાં ફળ બેસવું અને ફળ ટકવું સૌથી સારું રહ્યું અને ફળ ખરવું ઓછું થયું.','जूनागढ़ कृषि विश्वविद्यालय के केसर ट्रायल में फल लगना और फल टिकना सबसे अच्छा रहा और फल झड़ना कम हुआ.','In a Junagadh Agricultural University trial on Kesar, fruit set and fruit retention were best and fruit drop was lower.'],
+   ['ઇજિપ્તના બે વર્ષના હાફૂસ ટ્રાયલમાં ઝાડદીઠ ઉત્પાદન બિન-છંટકાવવાળા ઝાડ કરતાં આશરે 11 થી 15% વધ્યું.','मिस्र के दो साल के हापुस ट्रायल में प्रति पेड़ उपज बिना छिड़काव वाले पेड़ों से लगभग 11 से 15% बढ़ी.','In a two-season Alphonse trial in Egypt, yield per tree rose by about 11 to 15% over untreated trees.'],
+   ['પાકિસ્તાનના ટ્રાયલમાં છંટકાવવાળા ઝાડ પર પાકતા સુધી વધુ ફળ ટક્યાં.','पाकिस्तान के ट्रायल में छिड़काव वाले पेड़ों पर पकने तक ज़्यादा फल टिके.','In a trial in Pakistan, treated trees held more fruit through to maturity.']
   ],
   f:['સંદર્ભો','संदर्भ','References'],
   n:['આ સ્વતંત્ર સંશોધનો છે, જેમાં અલગ ઉત્પાદનો અને માત્રા વપરાઈ હતી. તમારા બગીચા માટેનો જથ્થો ઉપરના પ્લાનમાં છે.','ये स्वतंत्र शोध हैं, जिनमें अलग उत्पाद और मात्रा इस्तेमाल हुई थी. आपके बाग़ के लिए मात्रा ऊपर की योजना में है.','These are independent studies that used their own products and doses. The quantities for your orchard are in the plan above.']
@@ -259,6 +259,16 @@ var REFS=[
  'Ali H.A., Ibrahim H.I.M. and Noaman M.G.M. (2025). Effect of amino acids and chitosan foliar application on yield and fruit quality of mango "Alphonse". Future of Horticulture 1: 1-10. <a href="https://doi.org/10.37229/fsa.fjh.2025.01.08" target="_blank" rel="noopener">doi:10.37229/fsa.fjh.2025.01.08</a>',
  'Hasnain M. et al. (2023). Application of amino acids on mango tree (Mangifera indica L.) cv. Rataul No. 12: assessment of fruit fly infestation and postharvest parameters. Sarhad Journal of Agriculture 39(3): 745-756. <a href="https://dx.doi.org/10.17582/journal.sja/2023/39.3.745.756" target="_blank" rel="noopener">doi:10.17582/journal.sja/2023/39.3.745.756</a>'
 ];
+var METH={
+  q:['તમે કઈ રીતે આપવા માંગો છો તે પસંદ કરો:','आप किस तरीके से देना चाहते हैं, चुनें:','Choose how you want to apply it:'],
+  foliar:['છંટકાવ','छिड़काव','Foliar spray'],foliarS:['હમણાં માટે શ્રેષ્ઠ','अभी के लिए सबसे अच्छा','Best for now'],
+  basal:['જમીનમાં (બેઝલ)','ज़मीन में (बेसल)','Basal (soil)'],basalS:['સિંચાઈ જોઈએ','सिंचाई चाहिए','Needs irrigation'],
+  drench:['ડ્રેન્ચિંગ','ड्रेंचिंग','Drenching'],drenchS:['સિંચાઈ જોઈએ','सिंचाई चाहिए','Needs irrigation'],
+  foliarN:['હમણાં સિંચાઈ ન હોય ત્યારે છંટકાવ સૌથી સરળ અને અસરકારક રીત છે. પાંદડા પર સીધો છંટકાવ થાય છે.','अभी जब सिंचाई नहीं है, तब छिड़काव सबसे आसान और असरदार तरीका है. सीधे पत्तों पर छिड़काव होता है.','When irrigation is not available, spraying is the easiest way to apply it now. It goes straight onto the leaves.'],
+  basalN:['બેઝલ ખાતર આપ્યા પછી સિંચાઈ જરૂરી છે. પાણી મળે ત્યારે જ આ રીત અપનાવો.','बेसल खाद देने के बाद सिंचाई ज़रूरी है. पानी मिलने पर ही यह तरीका अपनाएं.','Basal application needs irrigation afterwards. Choose this once water is available.'],
+  drenchN:['ડ્રેન્ચિંગ માટે ઝાડ નીચે ભેજ/સિંચાઈ જરૂરી છે. પાણી મળે ત્યારે જ આ રીત અપનાવો.','ड्रेंचिंग के लिए पेड़ के नीचे नमी/सिंचाई ज़रूरी है. पानी मिलने पर ही यह तरीका अपनाएं.','Drenching needs soil moisture or irrigation. Choose this once water is available.'],
+  noSpray:['છંટકાવની માત્રા જોવા માટે નીચે “પ્લાન ગોઠવો” માં છંટકાવનું સાધન અને ટાંકી પસંદ કરો.','छिड़काव की मात्रा देखने के लिए नीचे “प्लान बदलें” में छिड़काव का साधन और टंकी चुनें.','To see the spray quantity, choose your spray equipment and tank size under “Adjust plan” below.']
+};
 function tr(a){return a[IDX[S?S.lang:'gu']]}
 var N={
   treesQ:['તમારા આંબા વિશે','आपके आम के पेड़','About your trees'],
@@ -497,10 +507,13 @@ function plan(){
   var M=window.MMSEASON&&window.MMSEASON[S.lang];
   if(M){var m=M.s[MONTH];h+='<div class="card now"><h2>📅 '+tr(N.nowT)+': '+M.m[MONTH]+'</h2><p><b>'+esc(m[0])+'</b></p><ul class="steps">'+m[1].map(function(x){return'<li>'+esc(x)+'</li>'}).join('')+'</ul></div>'}
   h+='<div class="card"><h2>🧾 '+tr(N.planT)+'</h2>';
+  var meth=o.method||(o.spray==='yes'?'foliar':'basal');
+  h+='<p class="hint">'+tr(METH.q)+'</p><div class="opts three methods">'+['foliar','basal','drench'].map(function(k){return'<button type="button" class="opt '+(meth===k?'on':'')+'" aria-pressed="'+(meth===k)+'" data-meth="'+k+'"><b>'+tr(METH[k])+'</b><small>'+tr(METH[k+'S'])+'</small></button>'}).join('')+'</div><p class="note meth-note">'+tr(METH[meth+'N'])+'</p>';
   gs.forEach(function(g,i){var c=C.calcGroup(g);if(!c)return;
-    h+='<h3 style="margin-top:10px">'+(gs.length>1?t.group+' '+(i+1)+': ':'')+t.perT+'</h3><p class="sub" style="margin:0 0 8px">'+g.age+' '+t.yr+' • '+g.plants+' '+t.plantsW+'</p><div class="doses">'+
-      dose('Immunity Granules',c.gram+' g',t.basal)+dose('Immunity Mango Special',fmt(c.ml,1)+' ml',t.drench)+(c.npk?dose('NPK Biofertilizer',fmt(c.npk,1)+' ml',t.drenchAdd):'')+'</div>'+
-      (c.water?'<p class="foliar"><b>🌿 '+t.spray+':</b> '+t.sprayLine(t.tankNames[g.tank],c.tanks,c.rounds,c.tankMl,fmt(c.water,0))+' <b>'+tr(SPN.total)+': '+(c.tanks*c.rounds)+'</b></p>':'')});
+    h+='<h3 style="margin-top:10px">'+(gs.length>1?t.group+' '+(i+1)+': ':'')+t.perT+'</h3><p class="sub" style="margin:0 0 8px">'+g.age+' '+t.yr+' • '+g.plants+' '+t.plantsW+'</p>';
+    if(meth==='basal')h+='<div class="doses">'+dose('Immunity Granules',c.gram+' g',t.basal)+'</div>';
+    else if(meth==='drench')h+='<div class="doses">'+dose('Immunity Mango Special',fmt(c.ml,1)+' ml',t.drench)+(c.npk?dose('NPK Biofertilizer',fmt(c.npk,1)+' ml',t.drenchAdd):'')+'</div>';
+    else h+=(c.water?'<p class="foliar"><b>🌿 '+t.spray+':</b> '+t.sprayLine(t.tankNames[g.tank],c.tanks,c.rounds,c.tankMl,fmt(c.water,0))+' <b>'+tr(SPN.total)+': '+(c.tanks*c.rounds)+'</b></p>':'<p class="hint">'+tr(METH.noSpray)+'</p>')});
   h+='<details class="adj"><summary>⚙️ '+tr(N.adjT)+'</summary>'+sub(tr(N.careL))+seg('care',['basic','balanced','strong','best'],['basic','balanced','strong','best'].map(function(k){return O.care[k][IDX[S.lang]]}))+
      sub(tr(N.npkL))+'<p class="hint">'+t.npkInfo+'</p>'+seg('npk',['yes','no'],[O.npk.yes[IDX[S.lang]],O.npk.no[IDX[S.lang]]])+sub(tr(N.sprayL))+seg('spray',['yes','no'],[O.spray.yes[IDX[S.lang]],O.spray.no[IDX[S.lang]]]);
   if(o.spray==='yes')h+='<p class="hint" style="margin-top:10px">'+t.tankL+'</p><div class="seg wrapseg">'+Object.keys(C.SPRAY).map(function(k){return'<button type="button" class="'+(o.tank===k?'on':'')+'" data-opt="tank" data-val="'+k+'">'+t.tankNames[k]+'</button>'}).join('')+'</div>'+
@@ -573,6 +586,7 @@ document.addEventListener('click',function(e){
   if(d.lang){S.lang=d.lang;track('language_selected');render(true);return}
   if(d.consent){try{localStorage.setItem('mm_consent',d.consent)}catch(x){}var v=d.consent==='yes'?'granted':'denied';gtag('consent','update',{ad_storage:v,analytics_storage:v,ad_user_data:v,ad_personalization:v});render(true);return}
   if(d.vid){var fg=el.parentNode,v=document.createElement('video');v.src=VIDHOST+d.vid+'.mp4';v.controls=true;v.autoplay=true;v.playsInline=true;v.setAttribute('playsinline','');v.setAttribute('preload','auto');el.replaceWith(v);track('testimonial_play',{video:d.vid});return}
+  if(d.meth){S.opts.method=d.meth;var y2=window.scrollY;render(true);window.scrollTo(0,y2);track('method_pick',{value:d.meth});resave();return}
   if(d.sp){if(d.sp==='none'){S.opts.spray='no'}else{S.opts.spray='yes';S.opts.tank=d.sp}render(true);refreshNext();track('spray_pick',{value:d.sp});return}
   if(d.age){g.age=d.age;render(true);var p=document.getElementById('plants');if(p&&!g.plants)p.focus();return}
   if(d.opt){S.opts[d.opt]=d.val;var y=window.scrollY;render(true);window.scrollTo(0,y);var ad=document.querySelector('details.adj');if(ad)ad.open=true;track('plan_adjusted',{field:d.opt,value:d.val});resave();return}

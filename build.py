@@ -118,7 +118,7 @@ def reels(lang, with_gafar=False):
     for f, name, line in VIDEOS:
         items.append(f'<figure class="reel"><button class="reel-b" data-src="{VID}/{f}.mp4" data-v="{f}" aria-label="{esc(name[idx])}: {esc(line[idx])}"><img src="/media/{f}-poster.webp" alt="" width="400" height="711" loading="lazy" decoding="async"><span class="play"></span></button><figcaption><b>{esc(name[idx])}</b>{esc(line[idx])}</figcaption></figure>')
     if with_gafar:
-        cap = {"gu": ("ગફાર લાયા, Gujarat Bio Organics", "સારી કેરી કેમ જરૂરી છે (હિન્દી)"), "hi": ("गफ़ार लाया, Gujarat Bio Organics", "अच्छा आम क्यों ज़रूरी है"), "en": ("Gafar Laiya, Gujarat Bio Organics", "Why good mangoes matter (Hindi)")}[lang]
+        cap = {"gu": ("ગફાર લૈયા, Gujarat Bio Organics", "સારી કેરી કેમ જરૂરી છે (હિન્દી)"), "hi": ("गफ़ार लैया, Gujarat Bio Organics", "अच्छा आम क्यों ज़रूरी है"), "en": ("Gafar Laiya, Gujarat Bio Organics", "Why good mangoes matter (Hindi)")}[lang]
         items.append(f'<figure class="reel"><button class="reel-b" data-src="{VID}/gafar-message.mp4" data-v="gafar" aria-label="{esc(cap[0])}"><img src="/media/gafar-poster.webp" alt="" width="400" height="711" loading="lazy" decoding="async"><span class="play"></span></button><figcaption><b>{esc(cap[0])}</b>{esc(cap[1])}</figcaption></figure>')
     return f'<div class="reels">{"".join(items)}</div>'
 

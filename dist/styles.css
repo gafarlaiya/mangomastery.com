@@ -235,3 +235,7 @@ a.card.kit.save{border:2px solid var(--leaf2);background:#f1f8ee}
 .cite{font-size:13px;color:var(--leaf2);text-decoration:none;font-weight:700}
 .refs{margin-top:18px;font-size:13px;color:var(--muted);line-height:1.45}
 .refs h3{font-size:15px;margin-bottom:6px}.refs ol{padding-left:20px}.refs li{margin:6px 0;word-break:break-word}.refs a{color:var(--leaf2)}
+.opts.three{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0}
+.opts.three .opt{display:flex;flex-direction:column;gap:2px;align-items:center;justify-content:center;text-align:center;padding:10px 6px;min-height:64px}
+.opts.three .opt small{font-size:11px;opacity:.75;font-weight:500}
+.meth-note{margin:4px 0 10px}
