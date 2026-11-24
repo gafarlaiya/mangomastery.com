@@ -1,18 +1,18 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-// Farmer login for GBO farmer sites: mangomastery.com (site "mango", codes MM-1234) and ganna.in (site "ganna", codes GN-1234).
+// Farmer login for GBO farmer sites: mangofarming.in (formerly mangomastery.com) (site "mango", codes MM-1234) and ganna.in (site "ganna", codes GN-1234).
 // Mobile: the site asks for a short code (start) -> the farmer WhatsApps it to +91 99787 91167 (DoubleTick)
 // -> dt-webhook forwards it here (inbound) -> we WhatsApp back a 6-digit OTP -> the site checks it (verify) -> session token.
 // Email: signup with consent for that site's email updates (email_signup) -> session token.
 // One account per farmer across both sites (table farmer_users). Email is unverified until a sending domain works.
 const SB_URL = Deno.env.get("SUPABASE_URL")!, SERVICE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const db = createClient(SB_URL, SERVICE);
-const ALLOWED = /^https:\/\/((www\.)?mangomastery\.com|[a-z0-9-]+\.mango-mastery\.pages\.dev|mango-mastery\.pages\.dev|(www\.)?ganna\.in)$|^http:\/\/localhost(:\d+)?$/;
+const ALLOWED = /^https:\/\/((www\.)?mangofarming\.in|(www\.)?mangomastery\.com|([a-z0-9-]+\.)?mangomastery-com\.pages\.dev|([a-z0-9-]+\.)?mango-mastery\.pages\.dev|(www\.)?ganna\.in)$|^http:\/\/localhost(:\d+)?$/;
 const FROM = "919978791167";
 const DT = "https://public.doubletick.io/whatsapp/message/text";
 type Site = "mango" | "ganna";
 const SITES: Record<Site, { prefix: string; name: string; list: string; url: string; icon: string }> = {
-  mango: { prefix: "MM", name: "Mango Mastery", list: "mango", url: "mangomastery.com/login", icon: "🥭" },
+  mango: { prefix: "MM", name: "Mango Mastery", list: "mango", url: "mangofarming.in/login", icon: "🥭" },
   ganna: { prefix: "GN", name: "ganna.in", list: "sugarcane", url: "ganna.in/login", icon: "🌾" },
 };
 const siteOf = (v: unknown): Site => (v === "ganna" ? "ganna" : "mango");
@@ -99,7 +99,7 @@ async function linkSessions(user_id: string, mobile: string | null, sessions: un
 
 Deno.serve(async (req) => {
   const origin = req.headers.get("origin") ?? "";
-  const cors = { "Access-Control-Allow-Origin": ALLOWED.test(origin) ? origin : "https://mangomastery.com", "Access-Control-Allow-Methods": "POST, OPTIONS",
+  const cors = { "Access-Control-Allow-Origin": ALLOWED.test(origin) ? origin : "https://mangofarming.in", "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "content-type", "Vary": "Origin", "Content-Type": "application/json" };
   const reply = (s: number, b: unknown) => new Response(JSON.stringify(b), { status: s, headers: cors });
   if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });

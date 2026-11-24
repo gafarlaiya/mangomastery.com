@@ -543,9 +543,9 @@ function plan(){
   h+='<p class="note">'+t.disclaimer+'</p><div class="actions"><button class="btn ghost" data-go="add">'+t.addGroup+'</button><button class="btn ghost" data-go="print">'+t.print+'</button></div><button class="link" data-go="restart">'+t.restart+'</button></main>';
   return h;
 }
-function waDiag(dx){var t=T();return t.waPhotos+'\n\n'+tr(N.diagT)+': '+dx.map(function(d){return tr(CAUSE[d.k].t)}).join(', ')}
+function waDiag(dx){var t=T(),f=S.farmer||{};return t.waPhotos+'\n\n'+(f.name?t.waName+': '+f.name+'\n':'')+(f.mobile?tr(['મોબાઇલ','मोबाइल','Mobile'])+': '+f.mobile+'\n':'')+(f.village?t.waVil+': '+f.village+(f.district?', '+f.district:'')+'\n':'')+'\n'+tr(N.diagT)+': '+dx.map(function(d){return tr(CAUSE[d.k].t)}).join(', ')}
 function waText(tot,dx){
-  var t=T(),f=S.farmer,l=[t.waHi,'',t.waName+': '+f.name,t.waVil+': '+f.village+(f.district?', '+f.district:''),''];
+  var t=T(),f=S.farmer,l=[t.waHi,'',t.waName+': '+f.name,tr(['મોબાઇલ','मोबाइल','Mobile'])+': '+(f.mobile||''),t.waVil+': '+f.village+(f.district?', '+f.district:''),''];
   S.groups.forEach(function(g){l.push('🌳 '+g.age+' '+t.yr+' • '+g.plants+' '+t.plantsW)});var c0=C.calcGroup(S.groups[0])||{};if(c0.water)l.push('🌿 '+t.tankNames[S.groups[0].tank]+' × '+c0.tanks+' × '+c0.rounds+' ('+tr(SPN.total)+': '+(c0.tanks*c0.rounds)+')');
   l.push('','🔎 '+dx.map(function(d){return tr(CAUSE[d.k].t)}).join(', '));
   if(tot.mangoL)l.push('',t.waNeed+':','✅ Immunity Mango Special: '+C.packs(tot.mangoL)+' ('+fmt(tot.mangoL)+' L)');

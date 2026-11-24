@@ -3,7 +3,7 @@ import { createClient } from "npm:@supabase/supabase-js@2";
 // Mango Mastery v2: saves every answer per question (mango_answers), the full assessment,
 // the tool's diagnosis (mango_diagnoses) and "Ask a Mango Expert" call-back requests.
 const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
-const ALLOWED = /^https:\/\/((www\.)?mangomastery\.com|[a-z0-9-]+\.mango-mastery\.pages\.dev|mango-mastery\.pages\.dev)$|^http:\/\/localhost(:\d+)?$/;
+const ALLOWED = /^https:\/\/((www\.)?mangofarming\.in|(www\.)?mangomastery\.com|([a-z0-9-]+\.)?mangomastery-com\.pages\.dev|([a-z0-9-]+\.)?mango-mastery\.pages\.dev)$|^http:\/\/localhost(:\d+)?$/;
 const str = (v: unknown, n: number) => typeof v === "string" ? v.trim().slice(0, n) : "";
 const KEY = /^[a-zA-Z][a-zA-Z0-9_]{0,39}$/;
 const LEVELS = new Set(["likely", "possible", "info"]);
@@ -37,7 +37,7 @@ function cleanAnswers(list: unknown, session_id: string, lang: string, flow: str
 Deno.serve(async (req) => {
   const origin = req.headers.get("origin") ?? "";
   const cors = {
-    "Access-Control-Allow-Origin": ALLOWED.test(origin) ? origin : "https://mangomastery.com",
+    "Access-Control-Allow-Origin": ALLOWED.test(origin) ? origin : "https://mangofarming.in",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "content-type",
     "Vary": "Origin",

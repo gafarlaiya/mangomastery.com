@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-"""Builds mangomastery.com into dist/. Run: python3 build.py"""
+"""Builds mangofarming.in (was mangomastery.com) into dist/. Run: python3 build.py"""
 import os, re, json, shutil, html, datetime
 from content import *
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC, OUT = os.path.join(ROOT, "src"), os.path.join(ROOT, "dist")
-SITE = "https://mangomastery.com"
+SITE = "https://mangofarming.in"
 BUILD_MONTH = datetime.date.today().month - 1  # 0-based
 esc = html.escape
 GTM = "GTM-5R35GWSQ"
