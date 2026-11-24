@@ -1,6 +1,6 @@
 (function(){
 var dl=window.dataLayer=window.dataLayer||[];
-function track(ev,x){var o={event:ev,app_name:'Mango Mastery',crop:'mango',lang:document.documentElement.lang};for(var k in(x||{}))o[k]=x[k];dl.push(o)}
+function track(ev,x){var o={event:ev,app_name:'Mango Farming',crop:'mango',lang:document.documentElement.lang};for(var k in(x||{}))o[k]=x[k];dl.push(o)}
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 
@@ -85,7 +85,7 @@ if($('m1'))$('m1').addEventListener('submit',function(e){e.preventDefault();
   api({action:'start',mobile:m}).then(function(j){b.disabled=false;
     if(!j.ok){err('m-err',j.error==='too_many'?'ઘણા પ્રયત્ન થયા. એક કલાક પછી ફરી કરો.':'કોડ ન મળ્યો. ફરી પ્રયત્ન કરો.');return}
     RQ=j.request_id;$('m-code').textContent=j.code;$('m-num').textContent=m;
-    $('m-wa').href='https://wa.me/'+j.wa+'?text='+encodeURIComponent('Mango Mastery લૉગિન કોડ: '+j.code);
+    $('m-wa').href='https://wa.me/'+j.wa+'?text='+encodeURIComponent('Mango Farming લૉગિન કોડ: '+j.code);
     show('m1',false);show('m2',true);$('m-wait').textContent='⏳ તમારા મેસેજની રાહ જોઈએ છીએ…';
     track('login_code_requested');clearInterval(poll);var n=0;
     poll=setInterval(function(){if(++n>300){clearInterval(poll);return}
@@ -127,7 +127,7 @@ if($('acctbox')){var A=getAuth();
   else{api({action:'me'}).then(function(j){
     if(!j.ok){setAuth(null);location.replace('/login/?next=/account/');return}
     var u=j.user;setAuth({token:A.token,user:u});show('a-load',false);show('a-main',true);
-    $('a-hi').textContent=(u.name?u.name+', ':'')+'નમસ્તે 🙏';$('a-sub').textContent='તમારું Mango Mastery ખાતું';
+    $('a-hi').textContent=(u.name?u.name+', ':'')+'નમસ્તે 🙏';$('a-sub').textContent='તમારું Mango Farming ખાતું';
     var f=$('a-prof');f.name.value=u.name||'';f.village.value=u.village||'';f.district.value=u.district||'';
     $('a-ids').innerHTML=(u.mobile?'📱 '+esc(u.mobile)+(u.mobile_verified?' ✅':''):'📱 મોબાઇલ નથી ઉમેર્યો: <a href="/login/?next=/account/">WhatsApp થી ઉમેરો</a>')+(u.email?' &nbsp; ✉️ '+esc(u.email):'');
     renderNews(u);

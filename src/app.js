@@ -5,7 +5,7 @@ var C = window.MMCalc;
 
 var L = {
 gu: {
-  brand:'🥭 Mango Mastery',
+  brand:'🥭 Mango Farming',
   h1:'તમારા આંબાને <em>ખરેખર શું જોઈએ છે?</em>',
   lead:'આંબાની ઉંમર અને તકલીફ કહો. છોડ દીઠ કેટલું આપવું અને આખા બગીચા માટે કેટલું જોઈશે, તેની ગણતરી તરત મળશે.',
   cta:'મારા બગીચાની ચકાસણી કરો', free:'મફત • 2 મિનિટ • ગુજરાતી, हिन्दी, English',
@@ -40,10 +40,10 @@ gu: {
   disclaimer:'આ ગણતરી તમારા જવાબો પર આધારિત છે, જમીન કે છોડની લેબ તપાસ નથી. પરિણામ જમીન, હવામાન અને માવજત પ્રમાણે બદલાઈ શકે છે.',
   saveFail:'માહિતી સેવ ન થઈ. પ્લાન નીચે જ છે, WhatsApp પર મોકલી દો.',
   consent:'વેબસાઇટ સુધારવા અને જાહેરાત માપવા અમે cookies વાપરીએ છીએ.', yes:'બરાબર', no:'જરૂરી જ',
-  waHi:'નમસ્કાર, મેં Mango Mastery પર મારા બગીચાની ચકાસણી કરી. મારે આ પ્લાન વિશે વાત કરવી છે અને ભાવ જાણવો છે.', waName:'નામ', waVil:'ગામ', waNeed:'મારી જરૂરિયાત', waPhotos:'નમસ્કાર, મારા આંબાની તકલીફ છે. હું ફોટા મોકલું છું, જોઈને કહેશો?'
+  waHi:'નમસ્કાર, મેં Mango Farming પર મારા બગીચાની ચકાસણી કરી. મારે આ પ્લાન વિશે વાત કરવી છે અને ભાવ જાણવો છે.', waName:'નામ', waVil:'ગામ', waNeed:'મારી જરૂરિયાત', waPhotos:'નમસ્કાર, મારા આંબાની તકલીફ છે. હું ફોટા મોકલું છું, જોઈને કહેશો?'
 },
 hi: {
-  brand:'🥭 Mango Mastery',
+  brand:'🥭 Mango Farming',
   h1:'आपके आम के बगीचे को <em>असल में क्या चाहिए?</em>',
   lead:'पेड़ों की उम्र और समस्या बताइए। प्रति पौधा कितना देना है और पूरे बगीचे के लिए कितना चाहिए, इसकी गणना तुरंत मिलेगी।',
   cta:'मेरे बगीचे की जांच करें', free:'मुफ्त • 2 मिनट • ગુજરાતી, हिन्दी, English',
@@ -78,10 +78,10 @@ hi: {
   disclaimer:'यह गणना आपके जवाबों पर आधारित है, मिट्टी या पौधे की लैब जांच नहीं। परिणाम मिट्टी, मौसम और देखभाल के अनुसार बदल सकते हैं।',
   saveFail:'जानकारी सेव नहीं हुई। प्लान नीचे है, WhatsApp पर भेज दें।',
   consent:'वेबसाइट सुधारने और विज्ञापन मापने के लिए हम cookies का उपयोग करते हैं।', yes:'ठीक है', no:'केवल जरूरी',
-  waHi:'नमस्कार, मैंने Mango Mastery पर अपने बगीचे की जांच की। मुझे इस प्लान के बारे में बात करनी है और भाव जानना है।', waName:'नाम', waVil:'गांव', waNeed:'मेरी जरूरत', waPhotos:'नमस्कार, मेरे आम के पेड़ों में समस्या है। मैं फोटो भेजता हूं, देखकर बताएंगे?'
+  waHi:'नमस्कार, मैंने Mango Farming पर अपने बगीचे की जांच की। मुझे इस प्लान के बारे में बात करनी है और भाव जानना है।', waName:'नाम', waVil:'गांव', waNeed:'मेरी जरूरत', waPhotos:'नमस्कार, मेरे आम के पेड़ों में समस्या है। मैं फोटो भेजता हूं, देखकर बताएंगे?'
 },
 en: {
-  brand:'🥭 Mango Mastery',
+  brand:'🥭 Mango Farming',
   h1:'What does your mango orchard <em>really need?</em>',
   lead:'Tell us the age of your trees and the problem. You get the dose per plant and the total quantity for your orchard right away.',
   cta:'Check my orchard', free:'Free • 2 minutes • ગુજરાતી, हिन्दी, English',
@@ -116,7 +116,7 @@ en: {
   disclaimer:'This calculation is based on your answers. It is not a lab test of soil or plant. Results can vary with soil, weather and care.',
   saveFail:'Could not save your details. Your plan is below, please send it on WhatsApp.',
   consent:'We use cookies to improve the site and measure ads.', yes:'OK', no:'Necessary only',
-  waHi:'Hello, I checked my orchard on Mango Mastery. I want to discuss this plan and know the price.', waName:'Name', waVil:'Village', waNeed:'My requirement', waPhotos:'Hello, my mango trees have a problem. I am sending photos, can you take a look?'
+  waHi:'Hello, I checked my orchard on Mango Farming. I want to discuss this plan and know the price.', waName:'Name', waVil:'Village', waNeed:'My requirement', waPhotos:'Hello, my mango trees have a problem. I am sending photos, can you take a look?'
 }};
 
 var O = {
@@ -422,7 +422,7 @@ function knownFarmer(){return!!(AUTH&&AUTH.token&&AUTH.user&&AUTH.user.mobile&&A
 function T(){return L[S.lang]}
 function homeUrl(){return S.lang==='gu'?'/':'/'+S.lang+'/'}
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-function track(ev,extra){var o={event:ev,app_name:'Mango Mastery',crop:'mango',lang:S.lang,flow:FLOW};for(var k in(extra||{}))o[k]=extra[k];window.dataLayer.push(o)}
+function track(ev,extra){var o={event:ev,app_name:'Mango Farming',crop:'mango',lang:S.lang,flow:FLOW};for(var k in(extra||{}))o[k]=extra[k];window.dataLayer.push(o)}
 function fmt(n,d){var x=Math.round(n*100)/100;return String(+x.toFixed(d==null?2:d))}
 function persist(){store('mm_state2',S)}
 function steps(){var g=S.cur,s=['trees','see'];if(DETAILS.some(function(k){return showDetail(k,g)}))s.push('details');s.push('history','care');if(!S.submitted&&!knownFarmer())s.push('you');return s}
@@ -439,7 +439,7 @@ function valid(s,g){
 /* ---------- rendering ---------- */
 function topbar(){
   var lg=AUTH&&AUTH.token?['/account/',['ખાતું','खाता','Account']]:['/login/?next=/check/',['લૉગિન','लॉगिन','Login']];
-  return '<header class="top"><a class="brand" href="'+homeUrl()+'" style="text-decoration:none;color:#fff">🥭 Mango Mastery</a><a class="acct" href="'+lg[0]+'">'+lg[1][IDX[S.lang]]+'</a><div class="langs" role="group" aria-label="Language">'+
+  return '<header class="top"><a class="brand" href="'+homeUrl()+'" style="text-decoration:none;color:#fff">🥭 Mango Farming</a><a class="acct" href="'+lg[0]+'">'+lg[1][IDX[S.lang]]+'</a><div class="langs" role="group" aria-label="Language">'+
    [['gu','ગુજરાતી'],['hi','हिन्दी'],['en','EN']].map(function(l){return '<button data-lang="'+l[0]+'" class="'+(S.lang===l[0]?'on':'')+'">'+l[1]+'</button>'}).join('')+'</div></header>';
 }
 function consentBar(){var c=null;try{c=localStorage.getItem('mm_consent')}catch(e){c='no'}if(c)return'';var t=T();

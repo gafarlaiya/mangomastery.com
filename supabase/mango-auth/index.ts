@@ -12,7 +12,7 @@ const FROM = "919978791167";
 const DT = "https://public.doubletick.io/whatsapp/message/text";
 type Site = "mango" | "ganna";
 const SITES: Record<Site, { prefix: string; name: string; list: string; url: string; icon: string }> = {
-  mango: { prefix: "MM", name: "Mango Mastery", list: "mango", url: "mangofarming.in/login", icon: "🥭" },
+  mango: { prefix: "MM", name: "Mango Farming", list: "mango", url: "mangofarming.in/login", icon: "🥭" },
   ganna: { prefix: "GN", name: "ganna.in", list: "sugarcane", url: "ganna.in/login", icon: "🌾" },
 };
 const siteOf = (v: unknown): Site => (v === "ganna" ? "ganna" : "mango");

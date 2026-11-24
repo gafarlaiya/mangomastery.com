@@ -63,7 +63,7 @@ def header(lang, here):
     langs = "".join(f'<a href="{u}" lang="{l}" class="{"on" if l == lang else ""}">{n}</a>' for l, n, u in LANGNAME)
     return f"""<body class="l-{lang}">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={GTM}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<header class="top"><div class="wrap top-in"><a class="mark" href="{home}">{MANGO}<span>Mango Mastery</span></a><nav class="nav" aria-label="Main">{nav}</nav><div class="langs" aria-label="Language">{langs}</div><a class="acct" id="acct" href="/login/" data-in="{ {"gu":"મારું ખાતું","hi":"मेरा खाता","en":"My account"}[lang] }">{ {"gu":"લૉગિન","hi":"लॉगिन","en":"Login"}[lang] }</a></div></header>
+<header class="top"><div class="wrap top-in"><a class="mark" href="{home}">{MANGO}<span>Mango Farming</span></a><nav class="nav" aria-label="Main">{nav}</nav><div class="langs" aria-label="Language">{langs}</div><a class="acct" id="acct" href="/login/" data-in="{ {"gu":"મારું ખાતું","hi":"मेरा खाता","en":"My account"}[lang] }">{ {"gu":"લૉગિન","hi":"लॉगिन","en":"Login"}[lang] }</a></div></header>
 """
 
 def footer(lang):
@@ -73,7 +73,7 @@ def footer(lang):
          "en": ("Free check", "Privacy", "About us", "Guides are general information. Also follow your agricultural university or KVK for your area.")}[lang]
     chk = "/check/" + ("" if lang == "gu" else f"?lang={lang}")
     return f"""<footer class="foot"><div class="wrap foot-in">
-<div><a class="mark" href="/">{MANGO}<span>Mango Mastery</span></a><p>{esc(h['co_s'])}</p></div>
+<div><a class="mark" href="/">{MANGO}<span>Mango Farming</span></a><p>{esc(h['co_s'])}</p></div>
 <ul><li><a href="{chk}">{t[0]}</a></li><li><a href="/guides/">{"માર્ગદર્શિકા" if lang=="gu" else "Guides (ગુજરાતી)"}</a></li><li><a href="/calendar/">{"કેલેન્ડર" if lang=="gu" else "Calendar (ગુજરાતી)"}</a></li><li><a href="/about/">{t[2]}</a></li><li><a href="/privacy/">{t[1]}</a></li></ul>
 <div><p><b>WhatsApp / {"ફોન" if lang=="gu" else "फ़ोन" if lang=="hi" else "Phone"}</b><br><a href="{wa()}">99787 91167</a></p><p class="small">© Gujarat Bio Organics Pvt. Ltd., Bhavnagar, Gujarat</p></div>
 </div><p class="wrap small disclaim">{t[3]}</p></footer>
@@ -138,7 +138,7 @@ def home(lang):
     if lang == "gu":
         guides = '<section class="sec"><div class="wrap"><h2>' + h["guides_t"] + '</h2><ul class="glist">' + "".join(
             f'<li><a href="/guides/{g["slug"]}/"><b>{esc(g["h1"])}</b><span>{esc(g["desc"][:110])}…</span></a></li>' for g in sorted(GUIDES, key=lambda g: GUIDE_ORDER.index(g["slug"]))) + '</ul></div></section>'
-    ld = [ORG, {"@context": "https://schema.org", "@type": "WebSite", "name": "Mango Mastery", "url": SITE + "/", "inLanguage": lang, "publisher": {"@id": SITE + "/#org"}}, faq_ld(h["faq"])]
+    ld = [ORG, {"@context": "https://schema.org", "@type": "WebSite", "name": "Mango Farming", "url": SITE + "/", "inLanguage": lang, "publisher": {"@id": SITE + "/#org"}}, faq_ld(h["faq"])]
     alt = [("gu", "/"), ("hi", "/hi/"), ("en", "/en/")]
     body = header(lang, path) + f"""<main>
 <section class="hero"><div class="wrap hero-in">
@@ -192,9 +192,9 @@ def kit():
     drows = "".join(f"<tr><td>{a} વર્ષ</td><td>{g} g</td><td>{ml} ml</td><td>{int(ml)/2:g} ml</td></tr>" for a, g, ml in d)
     srows = "".join(f"<tr><td>{w} L</td><td>{ml} ml</td><td>{ml} ml</td></tr>" for k, w, ml in sp)
     steps = ["આંબાના ઘેરાવા / ડ્રિપ લાઇન પાસે ગોળ રિંગ બનાવો.", "Immunity Granules રિંગમાં સરખા આપો.", "Mango Special અને (લીધું હોય તો) NPK Biofertilizer પાણીમાં ભેળવો.", "આ દ્રાવણ રિંગમાં આપો, માટીથી ઢાંકો અને પિયત આપો."]
-    ld = [crumbs([("Mango Mastery", "/"), ("Immunity Mango Kit", p)]), faq_ld(KIT_FAQ), ORG]
-    return p, head("gu", "Immunity Mango Kit: આંબા માટે ઉત્પાદનો, ડોઝ, પૅક સાઇઝ | Mango Mastery", "Immunity Mango Kit: Granules, Mango Special, NPK Biofertilizer અને Gold. આંબાની ઉંમર પ્રમાણે છોડ દીઠ ડોઝ, વાપરવાની રીત, પૅક સાઇઝ અને ખેડૂતોના વિડિયો.", p, ld, img="/media/p-immunity-mango-special.webp") + header("gu", p) + f"""<main>
-<section class="ghero"><div class="wrap ghero-in"><div><nav class="bc"><a href="/">Mango Mastery</a> › મેંગો કિટ</nav><h1>Immunity Mango Kit</h1>
+    ld = [crumbs([("Mango Farming", "/"), ("Immunity Mango Kit", p)]), faq_ld(KIT_FAQ), ORG]
+    return p, head("gu", "Immunity Mango Kit: આંબા માટે ઉત્પાદનો, ડોઝ, પૅક સાઇઝ | Mango Farming", "Immunity Mango Kit: Granules, Mango Special, NPK Biofertilizer અને Gold. આંબાની ઉંમર પ્રમાણે છોડ દીઠ ડોઝ, વાપરવાની રીત, પૅક સાઇઝ અને ખેડૂતોના વિડિયો.", p, ld, img="/media/p-immunity-mango-special.webp") + header("gu", p) + f"""<main>
+<section class="ghero"><div class="wrap ghero-in"><div><nav class="bc"><a href="/">Mango Farming</a> › મેંગો કિટ</nav><h1>Immunity Mango Kit</h1>
 <p class="lead">જમીન, મૂળ અને આંબા માટે ચાર ઉત્પાદનો. તમારા આંબાની ઉંમર અને સંખ્યા પ્રમાણે જથ્થો, મફત ચકાસણીમાં તરત.</p>
 <div class="hero-b"><a class="btn" href="/check/" data-track="kit_check">મારો જથ્થો ગણો</a><a class="ghost" href="{wa("નમસ્તે, Immunity Mango Kit વિશે જાણવું છે.")}" data-track="kit_whatsapp">ભાવ WhatsApp પર પૂછો</a></div></div>
 <figure class="kitfig">{"".join(f'<img src="/media/{x["img"]}" alt="{x["name"]}" width="{w}" height="300">' for x, w in zip([y for y in KIT_PRODUCTS if y["img"]], (250, 130, 130)))}</figure></div></section>
@@ -213,8 +213,8 @@ def ask():
     p = "/ask/"
     topics = [("flowering", "મોર / ફૂલ"), ("drop", "ફળ ખરવાં"), ("dying", "આંબા સુકાવા"), ("pest", "જીવાત / રોગ"), ("soil", "જમીન / ખાતર"), ("kit", "મેંગો કિટ / ભાવ"), ("other", "બીજું")]
     chips = "".join(f'<label class="chip"><input type="checkbox" name="topic" value="{k}"><span>{t}</span></label>' for k, t in topics)
-    return p, head("gu", "મેંગો એક્સપર્ટને પૂછો: આંબાની તકલીફ માટે મફત સલાહ | Mango Mastery", "આંબાની કોઈ પણ તકલીફ માટે Gujarat Bio Organics ના મેંગો એક્સપર્ટ સાથે વાત કરો: WhatsApp પર ફોટો, ફોન, અથવા કૉલ-બૅક ફોર્મ. મફત.", p, [crumbs([("Mango Mastery", "/"), ("નિષ્ણાતને પૂછો", p)]), ORG]) + header("gu", p) + f"""<main>
-<section class="ghero plain"><div class="wrap"><nav class="bc"><a href="/">Mango Mastery</a> › નિષ્ણાતને પૂછો</nav><h1>મેંગો એક્સપર્ટને પૂછો</h1><p class="lead">આંબાની કોઈ પણ તકલીફ માટે અમારા નિષ્ણાત સાથે સીધી વાત કરો. મફત.</p></div></section>
+    return p, head("gu", "મેંગો એક્સપર્ટને પૂછો: આંબાની તકલીફ માટે મફત સલાહ | Mango Farming", "આંબાની કોઈ પણ તકલીફ માટે Gujarat Bio Organics ના મેંગો એક્સપર્ટ સાથે વાત કરો: WhatsApp પર ફોટો, ફોન, અથવા કૉલ-બૅક ફોર્મ. મફત.", p, [crumbs([("Mango Farming", "/"), ("નિષ્ણાતને પૂછો", p)]), ORG]) + header("gu", p) + f"""<main>
+<section class="ghero plain"><div class="wrap"><nav class="bc"><a href="/">Mango Farming</a> › નિષ્ણાતને પૂછો</nav><h1>મેંગો એક્સપર્ટને પૂછો</h1><p class="lead">આંબાની કોઈ પણ તકલીફ માટે અમારા નિષ્ણાત સાથે સીધી વાત કરો. મફત.</p></div></section>
 <section class="sec"><div class="wrap askgrid">
 <div class="askcol"><h2 class="h3">સૌથી ઝડપી રસ્તા</h2>
 <a class="btn wa" href="{wa("નમસ્તે, મારા આંબાનો ફોટો મોકલું છું.")}" data-track="ask_whatsapp">{WA_ICON} WhatsApp પર ફોટો મોકલો</a>
@@ -235,12 +235,12 @@ def ask():
 <div class="askok" id="askok" hidden><h2 class="h3">✅ થઈ ગયું</h2><p>અમારા મેંગો એક્સપર્ટ જલ્દી ફોન કરશે. ત્યાં સુધી તમારા બગીચાની <a href="/check/">મફત ચકાસણી</a> કરી લો.</p></div>
 </div></section></main>""" + footer("gu")
 
-CONSENT_GU = "હું સંમતિ આપું છું કે Gujarat Bio Organics (Mango Mastery) મને આ ઈમેઇલ પર આંબાની સારી ખેતી માટે શૈક્ષણિક માહિતી, જ્ઞાન અને અપડેટ્સ સમયાંતરે મોકલે. હું ગમે ત્યારે બંધ કરી શકું છું."
+CONSENT_GU = "હું સંમતિ આપું છું કે Gujarat Bio Organics (Mango Farming) મને આ ઈમેઇલ પર આંબાની સારી ખેતી માટે શૈક્ષણિક માહિતી, જ્ઞાન અને અપડેટ્સ સમયાંતરે મોકલે. હું ગમે ત્યારે બંધ કરી શકું છું."
 
 def login():
     p = "/login/"
-    return p, head("gu", "લૉગિન | Mango Mastery", "મોબાઇલ (WhatsApp OTP) થી લૉગિન કરો અથવા ઈમેઇલથી જોડાઓ અને આંબાની ખેતી માટે માહિતી મેળવો.", p, robots="noindex,follow") + header("gu", p) + f"""<main>
-<section class="ghero plain"><div class="wrap"><h1>Mango Mastery માં લૉગિન</h1><p class="lead">તમારી ચકાસણીઓ અને પ્લાન સાચવો, અને ફરી ફોર્મ ભર્યા વગર ચકાસણી કરો.</p></div></section>
+    return p, head("gu", "લૉગિન | Mango Farming", "મોબાઇલ (WhatsApp OTP) થી લૉગિન કરો અથવા ઈમેઇલથી જોડાઓ અને આંબાની ખેતી માટે માહિતી મેળવો.", p, robots="noindex,follow") + header("gu", p) + f"""<main>
+<section class="ghero plain"><div class="wrap"><h1>Mango Farming માં લૉગિન</h1><p class="lead">તમારી ચકાસણીઓ અને પ્લાન સાચવો, અને ફરી ફોર્મ ભર્યા વગર ચકાસણી કરો.</p></div></section>
 <section class="sec"><div class="wrap narrow">
 <div class="tabs" role="tablist"><button role="tab" class="tab on" data-tab="mob" aria-selected="true">📱 મોબાઇલ (WhatsApp)</button><button role="tab" class="tab" data-tab="mail" aria-selected="false">✉️ ઈમેઇલથી જોડાઓ</button></div>
 
@@ -281,7 +281,7 @@ def login():
 
 def account():
     p = "/account/"
-    return p, head("gu", "મારું ખાતું | Mango Mastery", "તમારું Mango Mastery ખાતું.", p, robots="noindex,nofollow") + header("gu", p) + f"""<main>
+    return p, head("gu", "મારું ખાતું | Mango Farming", "તમારું Mango Farming ખાતું.", p, robots="noindex,nofollow") + header("gu", p) + f"""<main>
 <section class="ghero plain"><div class="wrap"><h1 id="a-hi">મારું ખાતું</h1><p class="lead" id="a-sub"></p></div></section>
 <section class="sec"><div class="wrap narrow" id="acctbox">
 <p id="a-load">⏳ લોડ થાય છે…</p>
@@ -316,12 +316,12 @@ def guide(g):
     words = len(re.sub("<[^>]+>", " ", body).split())
     ld = [{"@context": "https://schema.org", "@type": "Article", "headline": g["h1"], "description": g["desc"], "inLanguage": "gu", "image": SITE + "/media/" + g["img"],
            "datePublished": UPDATED, "dateModified": UPDATED, "author": {"@id": SITE + "/#org"}, "publisher": {"@id": SITE + "/#org"}, "mainEntityOfPage": SITE + p},
-          crumbs([("Mango Mastery", "/"), ("માર્ગદર્શિકા", "/guides/"), (g["h1"], p)]), faq_ld(g["faq"]), ORG]
+          crumbs([("Mango Farming", "/"), ("માર્ગદર્શિકા", "/guides/"), (g["h1"], p)]), faq_ld(g["faq"]), ORG]
     rel = "".join(f'<li><a href="/guides/{x["slug"]}/"><img src="/media/{sm(x["img"])}" alt="" width="160" height="100" loading="lazy"><span>{esc(x["h1"])}</span></a></li>' for x in others)
     src = "".join(f'<li><a href="{u}" rel="noopener" target="_blank">{esc(t)}</a></li>' for t, u in SOURCES)
     html_ = head("gu", g["title"], g["desc"], p, ld, img="/media/" + g["img"]) + header("gu", "/guides/") + f"""<main>
 <section class="ghero"><div class="wrap ghero-in"><div>
-<nav class="bc" aria-label="Breadcrumb"><a href="/">Mango Mastery</a> › <a href="/guides/">માર્ગદર્શિકા</a></nav>
+<nav class="bc" aria-label="Breadcrumb"><a href="/">Mango Farming</a> › <a href="/guides/">માર્ગદર્શિકા</a></nav>
 <h1>{esc(g['h1'])}</h1><p class="meta">Gujarat Bio Organics ટીમ · {max(2, words // 180)} મિનિટ વાંચન · અપડેટ: 19 નવેમ્બર 2026</p></div>
 <figure><img src="/media/{g['img']}" srcset="/media/{sm(g['img'])} 480w, /media/{g['img']} 900w" sizes="(max-width:820px) 92vw, 40vw" alt="{esc(g['alt'])}" width="640" height="400" fetchpriority="high"></figure></div></section>
 <div class="wrap art">
@@ -344,8 +344,8 @@ def guide(g):
 def guides_index():
     p = "/guides/"
     items = "".join(f'<li><a href="/guides/{g["slug"]}/"><img src="/media/{sm(g["img"])}" alt="" width="320" height="200" loading="lazy"><div><b>{esc(g["h1"])}</b><span>{esc(g["answer"][:150])}…</span></div></a></li>' for g in sorted(GUIDES, key=lambda g: GUIDE_ORDER.index(g["slug"])))
-    ld = [crumbs([("Mango Mastery", "/"), ("માર્ગદર્શિકા", p)]), {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": n + 1, "url": f"{SITE}/guides/{s}/"} for n, s in enumerate(GUIDE_ORDER)]}]
-    return p, head("gu", "આંબાની માર્ગદર્શિકા: મોર, ફળ ખરવા, મધિયો, સુકારો | Mango Mastery", "કેસર આંબાના ખેડૂતો માટે ગુજરાતીમાં સરળ માર્ગદર્શિકા: મોર ઓછો, કેરી ખરવી, એકાંતરે પાક, મધિયો અને ભૂકી છારો, આંબા સુકાવા, Cultar.", p, ld) + header("gu", p) + f"""<main>
+    ld = [crumbs([("Mango Farming", "/"), ("માર્ગદર્શિકા", p)]), {"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": n + 1, "url": f"{SITE}/guides/{s}/"} for n, s in enumerate(GUIDE_ORDER)]}]
+    return p, head("gu", "આંબાની માર્ગદર્શિકા: મોર, ફળ ખરવા, મધિયો, સુકારો | Mango Farming", "કેસર આંબાના ખેડૂતો માટે ગુજરાતીમાં સરળ માર્ગદર્શિકા: મોર ઓછો, કેરી ખરવી, એકાંતરે પાક, મધિયો અને ભૂકી છારો, આંબા સુકાવા, Cultar.", p, ld) + header("gu", p) + f"""<main>
 <section class="ghero plain"><div class="wrap"><h1>આંબાની માર્ગદર્શિકા</h1><p class="lead">બગીચામાં જે તકલીફ દેખાય તેનું કારણ અને પહેલું પગલું, સરળ ગુજરાતીમાં.</p></div></section>
 <section class="sec"><div class="wrap"><ul class="gcards">{items}</ul>{cta_card()}</div></section></main>""" + footer("gu")
 
@@ -356,15 +356,15 @@ def calendar():
         hd, tasks, watch, slug = SEASON["gu"][i]; st = stage_of(i + 1)
         link = "" if slug == "calendar" else f' <a href="/guides/{slug}/">વિગત</a>'
         rows += f'<article class="cal st-{st}" id="m{i+1}"><header><h2>{MONTH["gu"][i]}</h2><span class="tag st-{st}">{STAGE_NAME["gu"][st]}</span></header><p class="cal-h">{esc(hd)}</p><ul class="ticks">{"".join(f"<li>{esc(t)}</li>" for t in tasks)}</ul><p class="watch"><b>ધ્યાન રાખો:</b> {esc(watch)}{link}</p></article>'
-    ld = [crumbs([("Mango Mastery", "/"), ("કેલેન્ડર", p)]), {"@context": "https://schema.org", "@type": "Article", "headline": "આંબાનું વાર્ષિક કેલેન્ડર: કેસર આંબામાં મહિના પ્રમાણે શું કરવું", "inLanguage": "gu", "datePublished": UPDATED, "dateModified": UPDATED, "author": {"@id": SITE + "/#org"}, "publisher": {"@id": SITE + "/#org"}, "image": SITE + "/media/orchard-wide.webp"}, ORG]
-    return p, head("gu", "આંબાનું વાર્ષિક કેલેન્ડર: કેસરમાં મહિના પ્રમાણે શું કરવું | Mango Mastery", "કેસર આંબા માટે જાન્યુઆરીથી ડિસેમ્બર સુધી દર મહિને શું કરવું: પિયત, મોર, ફળ ખરવા, ઉતારો, છટણી, ખાતર અને જીવાત-રોગની તપાસ.", p, ld) + header("gu", p) + f"""<main>
-<section class="ghero plain"><div class="wrap"><nav class="bc"><a href="/">Mango Mastery</a> › કેલેન્ડર</nav><h1>આંબાનું વાર્ષિક કેલેન્ડર</h1><p class="lead">કેસર આંબા માટે, સૌરાષ્ટ્ર અને દક્ષિણ ગુજરાતના હવામાન પ્રમાણે. તમારા વિસ્તાર અને વર્ષના હવામાન પ્રમાણે સમય 2 થી 4 અઠવાડિયા આગળ-પાછળ થઈ શકે.</p></div></section>
+    ld = [crumbs([("Mango Farming", "/"), ("કેલેન્ડર", p)]), {"@context": "https://schema.org", "@type": "Article", "headline": "આંબાનું વાર્ષિક કેલેન્ડર: કેસર આંબામાં મહિના પ્રમાણે શું કરવું", "inLanguage": "gu", "datePublished": UPDATED, "dateModified": UPDATED, "author": {"@id": SITE + "/#org"}, "publisher": {"@id": SITE + "/#org"}, "image": SITE + "/media/orchard-wide.webp"}, ORG]
+    return p, head("gu", "આંબાનું વાર્ષિક કેલેન્ડર: કેસરમાં મહિના પ્રમાણે શું કરવું | Mango Farming", "કેસર આંબા માટે જાન્યુઆરીથી ડિસેમ્બર સુધી દર મહિને શું કરવું: પિયત, મોર, ફળ ખરવા, ઉતારો, છટણી, ખાતર અને જીવાત-રોગની તપાસ.", p, ld) + header("gu", p) + f"""<main>
+<section class="ghero plain"><div class="wrap"><nav class="bc"><a href="/">Mango Farming</a> › કેલેન્ડર</nav><h1>આંબાનું વાર્ષિક કેલેન્ડર</h1><p class="lead">કેસર આંબા માટે, સૌરાષ્ટ્ર અને દક્ષિણ ગુજરાતના હવામાન પ્રમાણે. તમારા વિસ્તાર અને વર્ષના હવામાન પ્રમાણે સમય 2 થી 4 અઠવાડિયા આગળ-પાછળ થઈ શકે.</p></div></section>
 <section class="sec"><div class="wrap">{yearbar("gu")}<div class="cals">{rows}</div>{cta_card()}</div></section></main>
 <script type="application/json" id="season">{season_json("gu")}</script>""" + footer("gu")
 
 def stories():
     p = "/stories/"
-    return p, head("gu", "આંબાના ખેડૂતોના અનુભવ: વિડિયો | Mango Mastery", "ગુજરાતના આંબાના ખેડૂતો પોતાના બગીચા અને પોતાના શબ્દોમાં: નબળા આંબા, મોર અને ફળ વિશેના અનુભવ.", p, [crumbs([("Mango Mastery", "/"), ("ખેડૂતોના અનુભવ", p)]), ORG]) + header("gu", p) + f"""<main>
+    return p, head("gu", "આંબાના ખેડૂતોના અનુભવ: વિડિયો | Mango Farming", "ગુજરાતના આંબાના ખેડૂતો પોતાના બગીચા અને પોતાના શબ્દોમાં: નબળા આંબા, મોર અને ફળ વિશેના અનુભવ.", p, [crumbs([("Mango Farming", "/"), ("ખેડૂતોના અનુભવ", p)]), ORG]) + header("gu", p) + f"""<main>
 <section class="ghero plain"><div class="wrap"><h1>ખેડૂતોના અનુભવ</h1><p class="lead">તેમના બગીચા, તેમના શબ્દો. વિડિયો પર ટૅપ કરો.</p></div></section>
 <section class="sec dark"><div class="wrap">{reels("gu", True)}<p class="note">{HOME['gu']['vid_note']}</p></div></section>
 <section class="sec"><div class="wrap narrow"><h2>તમારો અનુભવ પણ મોકલો</h2><p>તમારા બગીચાનો ફોટો કે વિડિયો WhatsApp પર મોકલો. તમારી પરવાનગીથી જ અહીં મૂકીશું.</p><a class="btn wa" href="{wa("નમસ્તે, મારા આંબાના બગીચાનો અનુભવ મોકલું છું.")}">{WA_ICON} WhatsApp પર મોકલો</a></div></section>
@@ -373,10 +373,10 @@ def stories():
 
 def about():
     p = "/about/"
-    return p, head("gu", "અમારા વિશે | Mango Mastery, Gujarat Bio Organics", "Mango Mastery એ Gujarat Bio Organics Pvt. Ltd., ભાવનગરની આંબાના ખેડૂતો માટેની મફત સેવા છે.", p, [ORG]) + header("gu", p) + f"""<main>
+    return p, head("gu", "અમારા વિશે | Mango Farming, Gujarat Bio Organics", "Mango Farming એ Gujarat Bio Organics Pvt. Ltd., ભાવનગરની આંબાના ખેડૂતો માટેની મફત સેવા છે.", p, [ORG]) + header("gu", p) + f"""<main>
 <section class="ghero plain"><div class="wrap"><h1>અમારા વિશે</h1></div></section>
 <section class="sec"><div class="wrap narrow prose">
-<p>Mango Mastery એ <b>Gujarat Bio Organics Pvt. Ltd., ભાવનગર</b> ની આંબાના ખેડૂતો માટેની મફત સેવા છે. અમે 2006 થી ખેડૂતો માટે જૈવિક ખાતર અને બાયોસ્ટિમ્યુલન્ટ બનાવીએ છીએ.</p>
+<p>Mango Farming એ <b>Gujarat Bio Organics Pvt. Ltd., ભાવનગર</b> ની આંબાના ખેડૂતો માટેની મફત સેવા છે. અમે 2006 થી ખેડૂતો માટે જૈવિક ખાતર અને બાયોસ્ટિમ્યુલન્ટ બનાવીએ છીએ.</p>
 <p>આ વેબસાઇટ પર બે વસ્તુ છે: આંબાની ઉંમર અને તકલીફ પ્રમાણે <a href="/check/">મફત ચકાસણી</a>, અને મહિના પ્રમાણે બગીચાની માવજત માટે ગુજરાતીમાં <a href="/guides/">માર્ગદર્શિકા</a>.</p>
 <p>ખેડૂતોના વિડિયો તેમના પોતાના અનુભવ છે. જમીન, હવામાન અને માવજત પ્રમાણે પરિણામ અલગ હોઈ શકે, તેથી અમે કોઈ ઉત્પાદન કે પરિણામની ગેરંટી આપતા નથી.</p>
 <p><b>સંપર્ક:</b> WhatsApp / ફોન <a href="{wa()}">99787 91167</a> · <a href="https://www.gujaratbio.com/gu/about">ગુજરાત બાયો ઓર્ગેનિક્સ (gujaratbio.com)</a></p>
@@ -384,7 +384,7 @@ def about():
 
 def privacy():
     p = "/privacy/"
-    return p, head("gu", "ગોપનીયતા નીતિ | Mango Mastery", "Mango Mastery તમારી માહિતી કેવી રીતે વાપરે છે.", p, robots="noindex,follow") + header("gu", p) + f"""<main>
+    return p, head("gu", "ગોપનીયતા નીતિ | Mango Farming", "Mango Farming તમારી માહિતી કેવી રીતે વાપરે છે.", p, robots="noindex,follow") + header("gu", p) + f"""<main>
 <section class="ghero plain"><div class="wrap"><h1>ગોપનીયતા નીતિ</h1></div></section>
 <section class="sec"><div class="wrap narrow prose">
 <p>ચકાસણીમાં તમે આપેલું નામ, મોબાઇલ નંબર, ગામ અને બગીચાની વિગત Gujarat Bio Organics Pvt. Ltd. ની ટીમ તમારો પ્લાન સમજાવવા અને તમારો સંપર્ક કરવા માટે વાપરે છે. આ માહિતી અમે વેચતા નથી કે બીજાને આપતા નથી.</p>
@@ -403,7 +403,7 @@ def check_page():
     return "/check/", raw.replace("{VER}", VER).replace('<script src="/calc.js', seas + '\n<script src="/calc.js')
 
 def notfound():
-    return head("gu", "પાનું મળ્યું નહીં | Mango Mastery", "", "/404", robots="noindex") + header("gu", "") + """<main><section class="ghero plain"><div class="wrap"><h1>આ પાનું મળ્યું નહીં</h1><p class="lead"><a href="/">હોમ પેજ</a> પર જાઓ અથવા <a href="/check/">મફત ચકાસણી</a> શરૂ કરો.</p></div></section></main>""" + footer("gu")
+    return head("gu", "પાનું મળ્યું નહીં | Mango Farming", "", "/404", robots="noindex") + header("gu", "") + """<main><section class="ghero plain"><div class="wrap"><h1>આ પાનું મળ્યું નહીં</h1><p class="lead"><a href="/">હોમ પેજ</a> પર જાઓ અથવા <a href="/check/">મફત ચકાસણી</a> શરૂ કરો.</p></div></section></main>""" + footer("gu")
 
 def build():
     global VER
@@ -436,7 +436,7 @@ def build():
     open(os.path.join(OUT, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{SITE}{p}</loc><lastmod>{UPDATED}</lastmod></url>" for p in sm) + "</urlset>\n")
     open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
     open(os.path.join(OUT, "llms.txt"), "w", encoding="utf-8").write(
-        "# Mango Mastery\n\n> Free mango orchard check and Gujarati month-by-month care guides for Kesar mango farmers, by Gujarat Bio Organics Pvt. Ltd., Bhavnagar (WhatsApp 9978791167).\n\n## Pages\n"
+        "# Mango Farming\n\n> Free mango orchard check and Gujarati month-by-month care guides for Kesar mango farmers, by Gujarat Bio Organics Pvt. Ltd., Bhavnagar (WhatsApp 9978791167).\n\n## Pages\n"
         + "".join(f"- [{g['h1']}]({SITE}/guides/{g['slug']}/): {g['desc']}\n" for g in GUIDES)
         + f"- [Mango calendar]({SITE}/calendar/): what to do each month\n- [Free orchard check]({SITE}/check/): per-tree plan by tree age and problem\n")
     print(len(pages), "pages")
