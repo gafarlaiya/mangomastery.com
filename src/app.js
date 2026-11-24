@@ -191,7 +191,7 @@ var WHY={
 };
 var KIT={
   h:['જૂની રીત છોડો: વર્ષ આખાનો એક પ્લાન','पुरानी आदतें छोड़ें: पूरे साल की एक योजना','Break the old habits: one plan for the whole year'],
-  p:['Immunity Mango Kit આંબાના આખા વર્ષ માટે બન્યું છે: મૂળ-જમીન માટે Granules અને Mango Special, અને ફોલિયર તબક્કા માટે Gold. તે આંબાને તબક્કે તબક્કે પોષણ આપી મજબૂત બનાવે છે, જેથી મોર, ફળ બેસવું અને ફળ ટકવું સારું થાય. ભારતભરના આંબા ઉગાડનારા ખેડૂતોનો ભરોસો.','Immunity Mango Kit आम के पूरे साल के लिए बना है: जड़-मिट्टी के लिए Granules और Mango Special, और फोलियर चरणों के लिए Gold. यह पेड़ को चरण दर चरण पोषण देकर मज़बूत बनाता है, ताकि बौर, फल लगना और फल टिकना बेहतर हो. पूरे भारत के आम उत्पादकों का भरोसा.','The Immunity Mango Kit is built around the whole mango year: Granules and Mango Special for the root zone and soil, and Gold for the foliar stages. It feeds and strengthens the tree stage by stage, so flowering, fruit set and fruit hold are stronger. Trusted by mango growers across India.'],
+  p:['આ સમયે Immunity Mango Special અને Immunity Gold નો છંટકાવ: સિંચાઈ વગર પણ થાય અને ખર્ચ ઓછો. તે આંબાને તબક્કે તબક્કે પોષણ આપી મજબૂત બનાવે છે, જેથી મોર, ફળ બેસવું અને ફળ ટકવું સારું થાય. ભારતભરના આંબા ઉગાડનારા ખેડૂતોનો ભરોસો.','इस समय Immunity Mango Special और Immunity Gold का छिड़काव: बिना सिंचाई के भी होता है और खर्च कम. यह पेड़ को चरण दर चरण पोषण देकर मज़बूत बनाता है, ताकि बौर, फल लगना और फल टिकना बेहतर हो. पूरे भारत के आम उत्पादकों का भरोसा.','Right now: a spray of Immunity Mango Special and Immunity Gold. It works without irrigation and keeps the cost low. It feeds and strengthens the tree stage by stage, so flowering, fruit set and fruit hold are stronger. Trusted by mango growers across India.'],
   b1:['તમારા {n} આંબા ({a} વર્ષના) માટે જથ્થો ઉપરના પ્લાનમાં કાઢેલો છે','आपके {n} पेड़ ({a} साल) की मात्रा ऊपर की योजना में निकाली गई है','Quantities for your {n} trees ({a} years old) are already worked out in the plan above'],
   b2:['અંદાજ નહીં, ઉંમર પ્રમાણે ગણતરી: બગાડ ઓછો','अंदाज़ा नहीं, उम्र के हिसाब से गणना: बर्बादी कम','Worked out by tree age, not guesswork, so less waste'],
   b3:['WhatsApp પર અમારા નિષ્ણાત તમારા ફોટા જુએ છે, મફત','WhatsApp पर हमारे विशेषज्ञ आपके फ़ोटो देखते हैं, मुफ़्त','Our expert looks at your photos on WhatsApp, free'],
@@ -268,6 +268,19 @@ var METH={
   basalN:['બેઝલ ખાતર આપ્યા પછી સિંચાઈ જરૂરી છે. પાણી મળે ત્યારે જ આ રીત અપનાવો.','बेसल खाद देने के बाद सिंचाई ज़रूरी है. पानी मिलने पर ही यह तरीका अपनाएं.','Basal application needs irrigation afterwards. Choose this once water is available.'],
   drenchN:['ડ્રેન્ચિંગ માટે ઝાડ નીચે ભેજ/સિંચાઈ જરૂરી છે. પાણી મળે ત્યારે જ આ રીત અપનાવો.','ड्रेंचिंग के लिए पेड़ के नीचे नमी/सिंचाई ज़रूरी है. पानी मिलने पर ही यह तरीका अपनाएं.','Drenching needs soil moisture or irrigation. Choose this once water is available.'],
   noSpray:['છંટકાવની માત્રા જોવા માટે નીચે “પ્લાન ગોઠવો” માં છંટકાવનું સાધન અને ટાંકી પસંદ કરો.','छिड़काव की मात्रा देखने के लिए नीचे “प्लान बदलें” में छिड़काव का साधन और टंकी चुनें.','To see the spray quantity, choose your spray equipment and tank size under “Adjust plan” below.']
+};
+function sprayTot(gs){var c=C.calcGroup(gs[0])||{};return{mangoL:c.sprayL||0,goldL:c.goldL||0,water:c.water||0}}
+var SP5={
+  intro:['આ સમયે ફક્ત છંટકાવ: Mango Special + Gold. સિંચાઈ વગર પણ થાય, ઓછો ખર્ચ, અને સીધું પાંદડા સુધી પહોંચે.','इस समय सिर्फ़ छिड़काव: Mango Special + Gold. बिना सिंचाई के भी हो जाता है, कम खर्च, और सीधे पत्तों तक पहुंचता है.','For now, spraying only: Mango Special + Gold. It works without irrigation, keeps the cost low and reaches the leaves directly.'],
+  planT:['આખા બગીચા માટે છંટકાવ પ્લાન','पूरे बगीचे के लिए छिड़काव योजना','Spray plan for the whole orchard'],
+  noSpray:['છંટકાવની માત્રા માટે નીચે તમારું સ્પ્રે સાધન, એક રાઉન્ડના પંપ/ટાંકી અને રાઉન્ડ પસંદ કરો. 15 લિટરનો હાથ પંપ પણ ચાલે.','छिड़काव की मात्रा के लिए नीचे अपना स्प्रे साधन, एक राउंड के पंप/टंकी और राउंड चुनें. 15 लीटर का हाथ पंप भी चलेगा.','To see the spray quantity, choose your spray equipment, pumps/tanks per round and rounds below. A 15 L hand pump works too.'],
+  steps:[
+   ['પંપ/ટાંકીમાં અડધું ચોખ્ખું પાણી ભરો.','पंप/टंकी में आधा साफ़ पानी भरें.','Fill the pump or tank half way with clean water.'],
+   ['ઉપર લખેલી માત્રા પ્રમાણે Mango Special અને Gold ઉમેરો અને સારી રીતે હલાવો.','ऊपर लिखी मात्रा के अनुसार Mango Special और Gold डालें और अच्छी तरह मिलाएं.','Add Mango Special and Gold as per the quantity above and mix well.'],
+   ['બાકીનું પાણી ભરી ફરી હલાવો.','बाकी पानी भरकर फिर मिलाएं.','Top up with water and mix again.'],
+   ['સવારે વહેલા કે સાંજે, પાંદડાની બંને બાજુ સરખો છંટકાવ કરો.','सुबह जल्दी या शाम को, पत्तों के दोनों तरफ़ बराबर छिड़काव करें.','Spray early morning or evening, evenly on both sides of the leaves.'],
+   ['બીજી દવા સાથે ભેળવતા પહેલાં WhatsApp પર અમને પૂછો.','किसी दूसरी दवा के साथ मिलाने से पहले WhatsApp पर हमसे पूछें.','Ask us on WhatsApp before mixing with any other spray.']
+  ]
 };
 function tr(a){return a[IDX[S?S.lang:'gu']]}
 var N={
@@ -507,24 +520,17 @@ function plan(){
   var M=window.MMSEASON&&window.MMSEASON[S.lang];
   if(M){var m=M.s[MONTH];h+='<div class="card now"><h2>📅 '+tr(N.nowT)+': '+M.m[MONTH]+'</h2><p><b>'+esc(m[0])+'</b></p><ul class="steps">'+m[1].map(function(x){return'<li>'+esc(x)+'</li>'}).join('')+'</ul></div>'}
   h+='<div class="card"><h2>🧾 '+tr(N.planT)+'</h2>';
-  var meth=o.method||(o.spray==='yes'?'foliar':'basal');
-  h+='<p class="hint">'+tr(METH.q)+'</p><div class="opts three methods">'+['foliar','basal','drench'].map(function(k){return'<button type="button" class="opt '+(meth===k?'on':'')+'" aria-pressed="'+(meth===k)+'" data-meth="'+k+'"><b>'+tr(METH[k])+'</b><small>'+tr(METH[k+'S'])+'</small></button>'}).join('')+'</div><p class="note meth-note">'+tr(METH[meth+'N'])+'</p>';
-  gs.forEach(function(g,i){var c=C.calcGroup(g);if(!c)return;
-    h+='<h3 style="margin-top:10px">'+(gs.length>1?t.group+' '+(i+1)+': ':'')+t.perT+'</h3><p class="sub" style="margin:0 0 8px">'+g.age+' '+t.yr+' • '+g.plants+' '+t.plantsW+'</p>';
-    if(meth==='basal')h+='<div class="doses">'+dose('Immunity Granules',c.gram+' g',t.basal)+'</div>';
-    else if(meth==='drench')h+='<div class="doses">'+dose('Immunity Mango Special',fmt(c.ml,1)+' ml',t.drench)+(c.npk?dose('NPK Biofertilizer',fmt(c.npk,1)+' ml',t.drenchAdd):'')+'</div>';
-    else h+=(c.water?'<p class="foliar"><b>🌿 '+t.spray+':</b> '+t.sprayLine(t.tankNames[g.tank],c.tanks,c.rounds,c.tankMl,fmt(c.water,0))+' <b>'+tr(SPN.total)+': '+(c.tanks*c.rounds)+'</b></p>':'<p class="hint">'+tr(METH.noSpray)+'</p>')});
-  h+='<details class="adj"><summary>⚙️ '+tr(N.adjT)+'</summary>'+sub(tr(N.careL))+seg('care',['basic','balanced','strong','best'],['basic','balanced','strong','best'].map(function(k){return O.care[k][IDX[S.lang]]}))+
-     sub(tr(N.npkL))+'<p class="hint">'+t.npkInfo+'</p>'+seg('npk',['yes','no'],[O.npk.yes[IDX[S.lang]],O.npk.no[IDX[S.lang]]])+sub(tr(N.sprayL))+seg('spray',['yes','no'],[O.spray.yes[IDX[S.lang]],O.spray.no[IDX[S.lang]]]);
-  if(o.spray==='yes')h+='<p class="hint" style="margin-top:10px">'+t.tankL+'</p><div class="seg wrapseg">'+Object.keys(C.SPRAY).map(function(k){return'<button type="button" class="'+(o.tank===k?'on':'')+'" data-opt="tank" data-val="'+k+'">'+t.tankNames[k]+'</button>'}).join('')+'</div>'+
-     '<label class="f">'+t.tanksL+'<input inputmode="numeric" value="'+esc(o.tanks)+'" data-optnum="tanks"></label><label class="f">'+t.roundsL+'<input inputmode="numeric" value="'+esc(o.rounds)+'" data-optnum="rounds"></label>';
-  h+='</details>';
-  h+='<h3 style="margin-top:16px">'+t.buyT+'</h3><ul class="buy"><li><b>Immunity Granules</b><strong>'+tot.bags+' × 8 kg</strong><small>'+fmt(tot.granKg)+' kg '+t.need+'</small></li>'+
-    '<li><b>Immunity Mango Special</b><strong>'+C.packs(tot.mangoL)+'</strong><small>'+fmt(tot.mangoL)+' L '+t.need+'</small></li>'+
-    (tot.npkL?'<li><b>NPK Biofertilizer</b><strong>'+C.packs(tot.npkL)+'</strong><small>'+fmt(tot.npkL)+' L '+t.need+'</small></li>':'')+
-    (tot.goldL?'<li><b>Immunity Gold</b><strong>'+C.packs(tot.goldL)+'</strong><small>'+fmt(tot.goldL)+' L '+t.need+'</small></li>':'')+'</ul>'+
-    '<a class="btn wa" href="https://wa.me/'+WA+'?text='+encodeURIComponent(waText(tot,dx))+'" target="_blank" rel="noopener" data-wa="plan">'+t.sendWA+'</a>'+
-    '<h3 style="margin-top:18px">🛠️ '+t.stepsT+'</h3><ol class="steps">'+t.steps.map(function(x){return'<li>'+x+'</li>'}).join('')+'</ol></div>';
+  var st=sprayTot(gs),g0=gs[0],c0=C.calcGroup(g0)||{};
+  h+='<p class="note meth-note">'+tr(SP5.intro)+'</p>';
+  if(c0.water)h+='<h3 style="margin-top:10px">🌿 '+tr(SP5.planT)+'</h3><p class="sub" style="margin:0 0 8px">'+gs.map(function(g){return g.age+' '+t.yr+' • '+g.plants+' '+t.plantsW}).join(' | ')+'</p><p class="foliar">'+t.sprayLine(t.tankNames[g0.tank],c0.tanks,c0.rounds,c0.tankMl,fmt(c0.water,0))+' <b>'+tr(SPN.total)+': '+(c0.tanks*c0.rounds)+'</b></p>';
+  else h+='<p class="hint">'+tr(SP5.noSpray)+'</p>';
+  h+='<details class="adj"'+(c0.water?'':' open')+'><summary>⚙️ '+tr(N.adjT)+'</summary><p class="hint">'+t.tankL+'</p><div class="seg wrapseg">'+Object.keys(C.SPRAY).map(function(k){return'<button type="button" class="'+(o.spray==='yes'&&o.tank===k?'on':'')+'" data-opt="tank" data-val="'+k+'">'+t.tankNames[k]+'</button>'}).join('')+'</div>'+
+     '<label class="f">'+t.tanksL+'<input inputmode="numeric" value="'+esc(o.tanks)+'" data-optnum="tanks"></label><label class="f">'+t.roundsL+'<input inputmode="numeric" value="'+esc(o.rounds)+'" data-optnum="rounds"></label></details>';
+  if(c0.water)h+='<h3 style="margin-top:16px">'+t.buyT+'</h3><ul class="buy">'+
+    '<li><b>Immunity Mango Special</b><strong>'+C.packs(st.mangoL)+'</strong><small>'+fmt(st.mangoL)+' L '+t.need+'</small></li>'+
+    '<li><b>Immunity Gold</b><strong>'+C.packs(st.goldL)+'</strong><small>'+fmt(st.goldL)+' L '+t.need+'</small></li></ul>';
+  h+='<a class="btn wa" href="https://wa.me/'+WA+'?text='+encodeURIComponent(waText(st,dx))+'" target="_blank" rel="noopener" data-wa="plan">'+t.sendWA+'</a>'+
+    '<h3 style="margin-top:18px">🛠️ '+t.stepsT+'</h3><ol class="steps">'+SP5.steps.map(function(x){return'<li>'+tr(x)+'</li>'}).join('')+'</ol></div>';
   h+='<div class="card"><h2>📷 '+tr(N.photoT)+'</h2><ol class="photos">'+N.photos.map(function(p){return'<li>'+tr(p)+'</li>'}).join('')+'</ol><a class="btn wa" href="https://wa.me/'+WA+'?text='+encodeURIComponent(waDiag(dx))+'" target="_blank" rel="noopener" data-wa="photos">'+tr(N.photoBtn)+'</a></div>';
   h+='<div class="card expert" id="expert"><h2>👨‍🌾 '+tr(N.askT)+'</h2><p>'+tr(N.askS)+'</p>'+(S.expert?'<p class="ok">✅ '+tr(N.askDone)+'</p>':
      '<label class="f">'+tr(N.askQ)+'<textarea id="askq" rows="3" maxlength="500"></textarea></label><button class="btn" data-go="expert">'+tr(N.askBtn)+'</button>')+
@@ -540,10 +546,9 @@ function plan(){
 function waDiag(dx){var t=T();return t.waPhotos+'\n\n'+tr(N.diagT)+': '+dx.map(function(d){return tr(CAUSE[d.k].t)}).join(', ')}
 function waText(tot,dx){
   var t=T(),f=S.farmer,l=[t.waHi,'',t.waName+': '+f.name,t.waVil+': '+f.village+(f.district?', '+f.district:''),''];
-  S.groups.forEach(function(g){var c=C.calcGroup(g);l.push('🌳 '+g.age+' '+t.yr+' • '+g.plants+' '+t.plantsW+' • '+c.gram+' g + '+fmt(c.ml,1)+' ml')});
+  S.groups.forEach(function(g){l.push('🌳 '+g.age+' '+t.yr+' • '+g.plants+' '+t.plantsW)});var c0=C.calcGroup(S.groups[0])||{};if(c0.water)l.push('🌿 '+t.tankNames[S.groups[0].tank]+' × '+c0.tanks+' × '+c0.rounds+' ('+tr(SPN.total)+': '+(c0.tanks*c0.rounds)+')');
   l.push('','🔎 '+dx.map(function(d){return tr(CAUSE[d.k].t)}).join(', '));
-  l.push('',t.waNeed+':','✅ Immunity Granules: '+tot.bags+' × 8 kg','✅ Immunity Mango Special: '+C.packs(tot.mangoL)+' ('+fmt(tot.mangoL)+' L)');
-  if(tot.npkL)l.push('✅ NPK Biofertilizer: '+C.packs(tot.npkL)+' ('+fmt(tot.npkL)+' L)');
+  if(tot.mangoL)l.push('',t.waNeed+':','✅ Immunity Mango Special: '+C.packs(tot.mangoL)+' ('+fmt(tot.mangoL)+' L)');
   if(tot.goldL)l.push('✅ Immunity Gold: '+C.packs(tot.goldL)+' ('+fmt(tot.goldL)+' L)');
   return l.join('\n');
 }
@@ -566,7 +571,7 @@ function saveLead(){
   var hp=document.getElementById('website');
   return post({name:f.name,mobile:f.mobile,village:f.village,district:f.district,total_plants:tot.plants,problems:probs,month:MONTH+1,urgent:isUrgent(S.groups,dx),
     diagnosis:dx,answers:allAnswers(),plan_options:S.opts,
-    groups:S.groups.map(function(g){return Object.assign({},g,{calc:C.calcGroup(g)})}),totals:tot,utm:S.utm||{},page_url:location.href,referrer:document.referrer,website:hp?hp.value:''});
+    groups:S.groups.map(function(g){return Object.assign({},g,{calc:C.calcGroup(g)})}),totals:Object.assign({},sprayTot(S.groups),{plants:tot.plants}),utm:S.utm||{},page_url:location.href,referrer:document.referrer,website:hp?hp.value:''});
 }
 var saveTimer=null;function resave(){clearTimeout(saveTimer);saveTimer=setTimeout(function(){saveLead().catch(function(){})},1500)}
 
@@ -589,7 +594,7 @@ document.addEventListener('click',function(e){
   if(d.meth){S.opts.method=d.meth;var y2=window.scrollY;render(true);window.scrollTo(0,y2);track('method_pick',{value:d.meth});resave();return}
   if(d.sp){if(d.sp==='none'){S.opts.spray='no'}else{S.opts.spray='yes';S.opts.tank=d.sp}render(true);refreshNext();track('spray_pick',{value:d.sp});return}
   if(d.age){g.age=d.age;render(true);var p=document.getElementById('plants');if(p&&!g.plants)p.focus();return}
-  if(d.opt){S.opts[d.opt]=d.val;var y=window.scrollY;render(true);window.scrollTo(0,y);var ad=document.querySelector('details.adj');if(ad)ad.open=true;track('plan_adjusted',{field:d.opt,value:d.val});resave();return}
+  if(d.opt){S.opts[d.opt]=d.val;if(d.opt==='tank'){S.opts.spray='yes';if(!(+S.opts.rounds))S.opts.rounds='1'}var y=window.scrollY;render(true);window.scrollTo(0,y);var ad=document.querySelector('details.adj');if(ad)ad.open=true;track('plan_adjusted',{field:d.opt,value:d.val});resave();return}
   if(d.pick){g[d.pick]=g[d.pick]===d.val&&d.pick==='variety'?'':d.val;render(true);refreshNext();return}
   if(d.tog){var a=g[d.tog],i=a.indexOf(d.val);
     if(i>=0)a.splice(i,1);else{var solo=['none','notSure','rare'].indexOf(d.val)>=0;
