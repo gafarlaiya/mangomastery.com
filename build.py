@@ -480,7 +480,7 @@ def build():
                 c = im.convert("RGB").crop((0, 200, 640, 600))
                 c.save(os.path.join(OUT, "media", "orchard-16x10.webp"), "WEBP", quality=55, method=6)
                 c.resize((400, 250), Image.LANCZOS).save(os.path.join(OUT, "media", "orchard-16x10-s.webp"), "WEBP", quality=55, method=6)
-    for f in ("site.css", "site.js", "app.js", "calc.js", "mangofert.js", "styles.css", "favicon.svg", "_headers", "832e3d6a8ef54a99b7e523a374f09a62.txt"):
+    for f in ("site.css", "site.js", "app.js", "calc.js", "mangofert.js", "styles.css", "favicon.svg", "_headers", "f4184a5af7914b528107b4c45ed90c83.txt"):
         shutil.copy(os.path.join(SRC, f), os.path.join(OUT, f))
     # self-hosted fonts: files in /fonts/, @font-face rules placed at the top of both stylesheets
     # self-hosted fonts, applied after the page has loaded (text shows at once in the phone's own font, then switches)
