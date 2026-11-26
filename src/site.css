@@ -306,3 +306,28 @@ a{color:var(--leaf2)}
 .okbox,.card2{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin-bottom:16px}
 .hist{list-style:none;padding:0;margin:0 0 14px}.hist li{padding:10px 0;border-bottom:1px solid var(--line)}.hist span{font-size:14.5px;color:var(--muted)}
 .link{background:none;border:0;color:var(--leaf2);text-decoration:underline;cursor:pointer;font:600 16px var(--body);padding:8px 0}
+/* mango fertilizer calculator */
+.tblw{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:12px}
+.tblw table{margin:0;min-width:560px}
+.mf{background:var(--sap);border:2px solid var(--leaf);border-radius:var(--r);padding:20px 22px;margin:28px 0}
+.mf h2{margin-top:0}
+.mf-f{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;margin:16px 0}
+.mf-f .w2{grid-column:1/-1}
+.mf-f label,.mf-f legend{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:16px;color:var(--leaf)}
+.mf-f input,.mf-f select{min-height:48px;padding:8px 12px;border:1.5px solid #b9c7ad;border-radius:10px;background:#fff;font:inherit;font-weight:400;color:var(--ink);width:100%}
+.mf-f fieldset{border:0;padding:0;margin:0}
+.mf-row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mf-row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mf-f .mf-chk{flex-direction:row;align-items:center;gap:10px;align-self:end;min-height:48px}
+.mf-chk input{width:22px;min-height:22px;height:22px;accent-color:var(--leaf)}
+.mf [hidden]{display:none!important}
+.mf-out{background:#fff;border-radius:12px;padding:16px 18px;margin:8px 0 16px;border-left:8px solid var(--kesar)}
+.mf-top{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.mf-top b{display:block;font:800 26px/1.1 var(--head);color:var(--leaf)}
+.mf-top span{font-size:14px;color:var(--muted)}
+.mf-out h3{font-size:18px;margin:16px 0 6px}
+.mf-list{margin:0;padding-left:20px}
+.mf-list li{margin:4px 0}
+.mf-note{font-size:15px;color:var(--muted);margin:8px 0 0}
+@media(max-width:620px){.mf{padding:16px}.mf-f{grid-template-columns:1fr}.mf-top{grid-template-columns:1fr 1fr}.mf-row3{grid-template-columns:1fr}}
+.tblw table{width:100%}

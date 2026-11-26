@@ -2,6 +2,7 @@
 """Builds mangofarming.in (was mangomastery.com) into dist/. Run: python3 build.py"""
 import os, re, json, shutil, html, datetime
 from content import *
+from fert_content import *
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC, OUT = os.path.join(ROOT, "src"), os.path.join(ROOT, "dist")
@@ -74,7 +75,7 @@ def footer(lang):
     chk = "/check/" + ("" if lang == "gu" else f"?lang={lang}")
     return f"""<footer class="foot"><div class="wrap foot-in">
 <div><a class="mark" href="/">{MANGO}<span>Mango Farming</span></a><p>{esc(h['co_s'])}</p></div>
-<ul><li><a href="{chk}">{t[0]}</a></li><li><a href="/guides/">{"માર્ગદર્શિકા" if lang=="gu" else "Guides (ગુજરાતી)"}</a></li><li><a href="/calendar/">{"કેલેન્ડર" if lang=="gu" else "Calendar (ગુજરાતી)"}</a></li><li><a href="/about/">{t[2]}</a></li><li><a href="/privacy/">{t[1]}</a></li></ul>
+<ul><li><a href="{chk}">{t[0]}</a></li><li><a href="/guides/">{"માર્ગદર્શિકા" if lang=="gu" else "Guides (ગુજરાતી)"}</a></li><li><a href="/calendar/">{"કેલેન્ડર" if lang=="gu" else "Calendar (ગુજરાતી)"}</a></li><li><a href="{FERT_PATH[lang]}">{ {"gu":"આંબાનું ખાતર","hi":"आम की खाद","en":"Mango fertilizer"}[lang] }</a></li><li><a href="/about/">{t[2]}</a></li><li><a href="/privacy/">{t[1]}</a></li></ul>
 <div><p><b>WhatsApp / {"ફોન" if lang=="gu" else "फ़ोन" if lang=="hi" else "Phone"}</b><br><a href="{wa()}">99787 91167</a></p><p class="small">© Gujarat Bio Organics Pvt. Ltd., Bhavnagar, Gujarat</p></div>
 </div><p class="wrap small disclaim">{t[3]}</p></footer>
 <div class="sticky" id="sticky"><a class="btn" href="{chk}" data-track="sticky_check">{h['sticky']}</a><a class="btn wa" href="{wa()}" data-track="whatsapp_direct" aria-label="WhatsApp">{WA_ICON}</a></div>
@@ -405,6 +406,66 @@ def check_page():
 def notfound():
     return head("gu", "પાનું મળ્યું નહીં | Mango Farming", "", "/404", robots="noindex") + header("gu", "") + """<main><section class="ghero plain"><div class="wrap"><h1>આ પાનું મળ્યું નહીં</h1><p class="lead"><a href="/">હોમ પેજ</a> પર જાઓ અથવા <a href="/check/">મફત ચકાસણી</a> શરૂ કરો.</p></div></section></main>""" + footer("gu")
 
+def fert(lang):
+    c = F[lang]; L = c["L"]; p = FERT_PATH[lang]
+    def ratio(t): return "–" if t is None else f"{t[0]} : {t[1]} : {t[2]} + {t[3]} kg"
+    table = '<div class="tblw"><table><thead><tr>' + "".join(f"<th>{h}</th>" for h in c["table_head"]) + "</tr></thead><tbody>" + "".join(
+        f"<tr><th>{a}</th><td>{ratio(n) if n else c['nl']}</td><td>{ratio(t)}</td><td>{ratio(k)}</td></tr>" for a, n, t, k in AGE_ROWS) + "</tbody></table></div>"
+    drip = '<div class="tblw"><table><thead><tr>' + "".join(f"<th>{h}</th>" for h in c["drip_head"]) + "</tr></thead><tbody>" + "".join(
+        f"<tr><th>{c['drip_names'][k]}</th><td>{n}%</td><td>{pp}%</td><td>{kk}%</td></tr>" for k, n, pp, kk in DRIP_ROWS) + "</tbody></table></div>"
+    def opt(k, sel=False): return f'<option value="{k}"{" selected" if sel else ""}>{L[k]}</option>'
+    lvl = lambda i: f'<select id="{i}">{opt("low")}{opt("med", True)}{opt("high")}</select>'.replace('value="low"', 'value="low"')
+    unit0 = "vigha16" if lang == "gu" else "acre"
+    calc = f"""<section class="mf" id="calculator"><h2 id="calc">{c['calc_h']}</h2><p>{c['calc_p']}</p>
+<form id="mfcalc" class="mf-f" onsubmit="return false">
+<label class="w2">{L['preset']}<select id="mf-preset">{opt('nhb', True)}{opt('tnau')}{opt('kau')}{opt('hdp')}</select></label>
+<label>{L['age']}<input id="mf-age" type="number" inputmode="numeric" min="1" max="60" value="6"></label>
+<label>{L['area']}<span class="mf-row2"><input id="mf-area" type="number" inputmode="decimal" min="0.1" step="0.1" value="1"><select id="mf-unit">{"".join(opt(u, u == unit0) for u in ("acre", "ha", "vigha16", "vigha24", "guntha"))}</select></span></label>
+<label class="w2">{L['sp']}<select id="mf-sp">{"".join(opt(x, x == "s10") for x in ("s10", "s8", "s7", "s5", "s3", "custom"))}</select></label>
+<div id="mf-custom" class="w2 mf-row2" hidden><label>{L['row']}<input id="mf-row" type="number" inputmode="decimal" min="1" step="0.5" value="8"></label><label>{L['plant']}<input id="mf-plant" type="number" inputmode="decimal" min="1" step="0.5" value="8"></label></div>
+<label class="w2">{L['trees']}<input id="mf-trees" type="number" inputmode="numeric" min="0" placeholder="0"></label>
+<label>{L['psrc']}<select id="mf-psrc">{opt('ssp', True)}{opt('dap')}</select></label>
+<label class="mf-chk"><input id="mf-bearing" type="checkbox" checked> {L['bearing']}</label>
+<fieldset class="w2"><legend>{L['soil']}</legend><span class="mf-row3"><label>{L['sn']}{lvl('mf-sn')}</label><label>{L['sp2']}{lvl('mf-sp2')}</label><label>{L['sk']}{lvl('mf-sk')}</label></span></fieldset>
+</form>
+<div id="mf-out" class="mf-out" aria-live="polite"></div>
+<a id="mf-wa" class="btn wa" href="{wa()}" data-track="fert_whatsapp" rel="noopener">{WA_ICON} {L['wa']}</a></section>"""
+    secs = ""
+    for n, (h, b) in enumerate(c["sections"]):
+        secs += f'<h2 id="s{n}">{h}</h2>' + b.replace("{table}", table).replace("{drip}", drip)
+        if n == 0: secs += f'<h3>{c["conv_h"]}</h3>{c["conv"]}'
+    kit = f'<aside class="cta"><p><b>{c["kit_h"]}</b></p>{c["kit"]}<div class="cta-b"><a class="btn" href="{c["kit_b"][1]}" data-track="fert_check">{c["kit_b"][0]}</a></div></aside>'
+    toc = "".join(f'<li><a href="#s{n}">{h}</a></li>' for n, (h, _) in enumerate(c["sections"]))
+    src = "".join(f'<li><a href="{u}" rel="noopener" target="_blank">{esc(t)}</a></li>' for t, u in FERT_SOURCES)
+    alt = [(l, FERT_PATH[l]) for l in ("gu", "hi", "en")]
+    home_u = {"gu": "/", "hi": "/hi/", "en": "/en/"}[lang]
+    ld = [{"@context": "https://schema.org", "@type": "Article", "headline": c["h1"], "description": c["desc"], "inLanguage": lang, "image": SITE + "/media/orchard-wide.webp",
+           "datePublished": FERT_UPDATED, "dateModified": FERT_UPDATED, "author": {"@id": SITE + "/#org"}, "publisher": {"@id": SITE + "/#org"}, "mainEntityOfPage": SITE + p,
+           "citation": [u for _, u in FERT_SOURCES]},
+          {"@context": "https://schema.org", "@type": "WebApplication", "name": c["webapp"], "url": SITE + p + "#calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "inLanguage": lang,
+           "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "publisher": {"@id": SITE + "/#org"}},
+          crumbs([("Mango Farming", home_u), (c["crumb"], p)]), faq_ld(c["faq"]), ORG]
+    side = {"gu": "આ પાનામાં", "hi": "इस पेज में", "en": "On this page"}[lang]
+    calcl = {"gu": "કેલ્ક્યુલેટર", "hi": "कैलकुलेटर", "en": "Calculator"}[lang]
+    faql = {"gu": "પ્રશ્નો", "hi": "सवाल", "en": "Questions"}[lang]
+    return p, head(lang, c["title"], c["desc"], p, ld, alt=alt, img="/media/orchard-wide.webp") + header(lang, p) + f"""<main>
+<section class="ghero plain"><div class="wrap"><nav class="bc" aria-label="Breadcrumb"><a href="{home_u}">Mango Farming</a> › {c['crumb']}</nav><h1>{esc(c['h1'])}</h1><p class="meta">{c['meta']}</p></div></section>
+<div class="wrap art">
+<article class="prose">
+<div class="answer"><p class="ans-k">{c['ans_k']}</p><p>{esc(c['answer'])}</p></div>
+{calc}
+{secs}
+{kit}
+<h2 id="faq">{c['faq_h']}</h2>{faq_html(c['faq'])}
+<p>{c['related']}</p>
+<p class="src-h">{c['src_h']}</p><ul class="src">{src}</ul>
+<p class="small">{c['note']}</p>
+</article>
+<aside class="side"><nav class="toc" aria-label="{side}"><p>{side}</p><ol><li><a href="#calc">{calcl}</a></li>{toc}<li><a href="#faq">{faql}</a></li></ol></nav></aside>
+</div></main>
+<script src="/mangofert.js?v={VER}" defer></script>
+""" + footer(lang)
+
 def build():
     global VER
     VER = datetime.datetime.now().strftime("%m%d%H%M")
@@ -419,7 +480,7 @@ def build():
                 c = im.convert("RGB").crop((0, 200, 640, 600))
                 c.save(os.path.join(OUT, "media", "orchard-16x10.webp"), "WEBP", quality=55, method=6)
                 c.resize((400, 250), Image.LANCZOS).save(os.path.join(OUT, "media", "orchard-16x10-s.webp"), "WEBP", quality=55, method=6)
-    for f in ("site.css", "site.js", "app.js", "calc.js", "styles.css", "favicon.svg", "_headers"):
+    for f in ("site.css", "site.js", "app.js", "calc.js", "mangofert.js", "styles.css", "favicon.svg", "_headers", "832e3d6a8ef54a99b7e523a374f09a62.txt"):
         shutil.copy(os.path.join(SRC, f), os.path.join(OUT, f))
     # self-hosted fonts: files in /fonts/, @font-face rules placed at the top of both stylesheets
     # self-hosted fonts, applied after the page has loaded (text shows at once in the phone's own font, then switches)
@@ -427,6 +488,7 @@ def build():
     shutil.copy(os.path.join(SRC, "fonts.css"), os.path.join(OUT, "fonts.css"))
     pages = {"/": home("gu"), "/hi/": home("hi"), "/en/": home("en")}
     for g in GUIDES: k, v = guide(g); pages[k] = v
+    for l in ("gu", "hi", "en"): k, v = fert(l); pages[k] = v
     for fn in (guides_index, calendar, stories, about, privacy, check_page, kit, ask, login, account): k, v = fn(); pages[k] = v
     for path, h in pages.items():
         d = os.path.join(OUT, path.strip("/")); os.makedirs(d, exist_ok=True)
@@ -438,6 +500,7 @@ def build():
     open(os.path.join(OUT, "llms.txt"), "w", encoding="utf-8").write(
         "# Mango Farming\n\n> Free mango orchard check and Gujarati month-by-month care guides for Kesar mango farmers, by Gujarat Bio Organics Pvt. Ltd., Bhavnagar (WhatsApp 9978791167).\n\n## Pages\n"
         + "".join(f"- [{g['h1']}]({SITE}/guides/{g['slug']}/): {g['desc']}\n" for g in GUIDES)
+        + f"- [Mango fertilizer schedule by tree age, with calculator]({SITE}/en/mango-fertilizer/): NPK grams per tree by age from NHB, TNAU and KAU, timing, placement, drip fertigation for high-density orchards (also in Gujarati {SITE}/mango-fertilizer/ and Hindi {SITE}/hi/mango-fertilizer/)\n"
         + f"- [Mango calendar]({SITE}/calendar/): what to do each month\n- [Free orchard check]({SITE}/check/): per-tree plan by tree age and problem\n")
     print(len(pages), "pages")
 
